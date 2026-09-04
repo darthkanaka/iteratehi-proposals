@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Direction Two, Clear Morning | Kahala Clinic Design Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FFFFFF; --mist:#F6F5F1; --stone:#EDEBE4;
+  --ink:#15181A; --slate:#33474D; --muted:#5D666A;
+  --gold:#B07E33; --gold-deep:#705400; --gold-light:#DEAF4E;
+  --line:#E2DFD6;
+  --display:'Manrope',-apple-system,BlinkMacSystemFont,sans-serif;
+  --body:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  --max:1180px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--paper);color:var(--ink);line-height:1.65;font-size:16.5px;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+
+.chrome{background:#15181A;color:#D7D9D6;font-size:12.5px;padding:9px 20px;display:flex;gap:16px;align-items:center;justify-content:center;flex-wrap:wrap;text-align:center}
+.chrome b{color:#DEAF4E;font-weight:600}
+.chrome a{color:#D7D9D6;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+
+.wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.14;letter-spacing:-.025em}
+h2{font-size:clamp(28px,3.6vw,40px)}
+h3{font-size:19px;line-height:1.35;letter-spacing:-.015em}
+p{color:var(--muted)}
+.kicker{font-family:var(--display);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-deep);font-weight:700;display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.kicker::before{content:"";width:26px;height:1.5px;background:var(--gold-light);flex:none}
+.kicker.center{justify-content:center}
+section{padding:clamp(58px,7.5vw,96px) 0}
+.tall{padding:clamp(76px,10vw,124px) 0}
+.mist{background:var(--mist)}
+.head{max-width:640px;margin-bottom:clamp(34px,4vw,52px)}
+.head.center{margin-left:auto;margin-right:auto;text-align:center}
+.head.center .kicker{justify-content:center}
+.head p{margin-top:14px;font-size:17.5px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--display);font-weight:700;font-size:15px;padding:14px 26px;border-radius:8px;text-decoration:none;transition:background-color .25s ease,color .25s ease,border-color .25s ease,box-shadow .25s ease}
+.btn-gold{background:var(--gold);color:#fff;box-shadow:0 4px 14px rgba(112,84,0,.16)}
+.btn-gold:hover{background:var(--gold-deep);box-shadow:0 8px 22px rgba(112,84,0,.24)}
+.btn-out{border:1.5px solid var(--line);color:var(--ink);background:#fff}
+.btn-out:hover{border-color:var(--gold);color:var(--gold-deep)}
+
+/* utility strip, splits new patients from current patients */
+.util{background:var(--slate);color:#DDE5E6;font-size:13px}
+.util-in{max-width:var(--max);margin:0 auto;padding:8px 28px;display:flex;gap:8px 26px;align-items:center;flex-wrap:wrap}
+.util a{text-decoration:none;transition:color .2s ease}
+.util a:hover{color:#fff}
+.util .right{margin-left:auto;display:flex;gap:22px;align-items:center}
+.util .portal{border:1px solid rgba(221,229,230,.34);border-radius:6px;padding:3px 12px}
+
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:var(--max);margin:0 auto;padding:13px 28px;display:flex;align-items:center;gap:30px}
+.nav-logo img{height:40px;width:auto}
+.nav-links{margin-left:auto;display:flex;align-items:center;gap:28px}
+.nav-links a{font-size:14.5px;font-weight:500;text-decoration:none;color:var(--muted);transition:color .2s ease}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a.btn{color:#fff}
+
+/* split hero, photo panel drops past the section edge */
+.hero{padding:clamp(56px,7vw,88px) 0 0;position:relative}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,64px);align-items:center}
+.hero h1{font-size:clamp(38px,5.2vw,58px);max-width:12ch;font-weight:800}
+.hero-sub{font-size:19px;margin-top:20px;max-width:40ch;color:var(--muted)}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.hero-meta{display:grid;grid-template-columns:repeat(3,auto);gap:22px 30px;margin-top:34px;padding-top:26px;border-top:1px solid var(--line);justify-content:start}
+.hero-meta div{font-size:13.5px;color:var(--muted)}
+.hero-meta b{display:block;font-family:var(--display);font-size:15px;color:var(--ink);font-weight:700;margin-bottom:2px}
+.hero-photo{position:relative;border-radius:14px;overflow:hidden;margin-bottom:clamp(-96px,-7vw,-60px);box-shadow:0 24px 60px rgba(21,24,26,.15);opacity:0;transform:translateY(18px) scale(.99);transition:opacity 1.1s cubic-bezier(.2,.7,.3,1),transform 1.1s cubic-bezier(.2,.7,.3,1)}
+.hero-photo.in{opacity:1;transform:none}
+.hero-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 45%}
+.hero-tag{position:absolute;left:0;right:0;bottom:0;padding:26px 24px 20px;background:linear-gradient(to top,rgba(12,14,16,.78),transparent);color:#fff;font-family:var(--display);font-weight:600;font-size:15px}
+
+.pad-after-hero{padding-top:clamp(104px,9vw,132px)}
+
+/* who we care for */
+.who{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.who div{background:var(--paper);padding:26px 24px 28px;transition:background-color .3s ease}
+.who div:hover{background:#FDFCF9}
+.who .n{font-family:var(--display);font-size:12px;letter-spacing:.14em;color:var(--gold);font-weight:700;margin-bottom:14px}
+.who h3{margin-bottom:8px}
+.who p{font-size:15px}
+
+/* numbered approach rows */
+.rows{border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:80px 1fr 1.1fr;gap:24px;padding:30px 0;border-bottom:1px solid var(--line);align-items:start;transition:background-color .3s ease}
+.row:hover{background:#FCFBF8}
+.row-n{font-family:var(--display);font-size:34px;font-weight:800;color:var(--stone);line-height:1;letter-spacing:-.03em}
+.row p{font-size:16px}
+
+/* story split */
+.story{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(34px,5vw,68px);align-items:center}
+.story-img{border-radius:14px;overflow:hidden;position:relative}
+.story-img img{width:100%;aspect-ratio:3/2;object-fit:cover;filter:saturate(.6)}
+.cap{font-size:13px;color:var(--muted);margin-top:12px;padding-left:14px;border-left:2px solid var(--gold-light)}
+.story p+p{margin-top:15px}
+
+/* services list */
+.svc{display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(30px,5vw,64px)}
+.svc div{display:flex;gap:16px;align-items:baseline;padding:19px 0;border-bottom:1px solid var(--line);font-family:var(--display);font-weight:600;font-size:17px;letter-spacing:-.015em}
+.svc span{font-family:var(--body);font-size:12px;color:var(--gold);font-weight:600;letter-spacing:.08em;flex:none}
+
+/* team */
+.team{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.pcard{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--paper);transition:box-shadow .3s ease,border-color .3s ease}
+.pcard:hover{box-shadow:0 14px 34px rgba(21,24,26,.09);border-color:#D3CEC1}
+.pcard-img{position:relative;aspect-ratio:4/5;background:var(--stone);overflow:hidden}
+.pcard-img img{position:absolute;left:50%;bottom:0;width:105%;transform:translateX(-50%)}
+.pcard-body{padding:14px 15px 16px;border-top:1px solid var(--line)}
+.pcard-name{font-family:var(--display);font-weight:700;font-size:14.5px;letter-spacing:-.015em;line-height:1.3}
+.pcard-cred{font-size:12px;color:var(--gold-deep);margin-top:4px;font-weight:500}
+
+/* quote and insurance */
+.duo{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(30px,4.5vw,58px);align-items:start}
+.quote{font-family:var(--display);font-size:clamp(20px,2.4vw,27px);font-weight:600;line-height:1.45;letter-spacing:-.02em;color:var(--ink);padding-left:24px;border-left:3px solid var(--gold-light)}
+.quote-by{font-family:var(--body);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:18px;padding-left:24px}
+.ins{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:26px 28px}
+.ins h3{margin-bottom:12px}
+.ins ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.ins li{font-size:13.5px;border:1px solid var(--line);border-radius:6px;padding:5px 11px;color:var(--slate);background:var(--mist)}
+
+/* connect */
+.connect{background:var(--slate);color:#E6ECED}
+.connect h2,.connect h3{color:#fff}
+.connect .kicker{color:var(--gold-light)}
+.connect .head p{color:rgba(230,236,237,.74)}
+.panel{background:#fff;border-radius:14px;padding:clamp(28px,3.5vw,44px);color:var(--ink);box-shadow:0 26px 60px rgba(10,20,22,.28)}
+.step{padding:26px 0;border-top:1px solid var(--line)}
+.step:first-child{border-top:0;padding-top:0}
+.step-tag{display:flex;align-items:center;gap:11px;font-family:var(--display);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--gold-deep);margin-bottom:10px}
+.step-num{width:24px;height:24px;border-radius:6px;background:var(--gold-light);color:var(--ink);display:flex;align-items:center;justify-content:center;font-size:12.5px;letter-spacing:0}
+.step h3{color:var(--ink);font-size:20px;margin-bottom:18px}
+.form-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.form-btn{display:flex;align-items:center;justify-content:center;text-align:center;border:1.5px solid var(--line);border-radius:9px;padding:15px 14px;font-size:14.5px;font-weight:500;text-decoration:none;color:var(--ink);transition:border-color .25s ease,background-color .25s ease}
+.form-btn:hover{border-color:var(--gold);background:#FDFAF4}
+.form-btn.solo{background:var(--gold);border-color:var(--gold);color:#fff;font-weight:700}
+.form-btn.solo:hover{background:var(--gold-deep);border-color:var(--gold-deep)}
+.urgent{margin-top:26px;display:flex;gap:14px;align-items:flex-start;background:rgba(255,255,255,.07);border:1px solid rgba(222,175,78,.32);border-radius:10px;padding:18px 20px}
+.urgent b{color:#fff;font-family:var(--display);font-size:14.5px;white-space:nowrap}
+.urgent p{color:rgba(230,236,237,.78);font-size:14.5px}
+
+/* footer */
+.foot{background:var(--mist);border-top:1px solid var(--line);padding:clamp(52px,6vw,74px) 0 0}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:34px}
+.foot-logo img{height:46px;margin-bottom:14px}
+.foot h4{font-family:var(--display);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);font-weight:700;margin-bottom:12px}
+.foot p,.foot a{font-size:15px;color:var(--muted);text-decoration:none}
+.foot a:hover{color:var(--ink)}
+.crisis{margin-top:clamp(40px,4.5vw,58px);background:var(--slate);color:#DDE5E6;border-radius:10px;padding:16px 22px;font-size:14.5px;display:flex;gap:8px 18px;flex-wrap:wrap;align-items:center}
+.crisis b{color:#fff;font-family:var(--display)}
+.foot-bottom{margin-top:26px;border-top:1px solid var(--line);padding:20px 0 24px;font-size:13px;color:var(--muted);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+.rv{opacity:0;transform:translateY(20px);transition:opacity .75s cubic-bezier(.2,.7,.3,1),transform .75s cubic-bezier(.2,.7,.3,1)}
+.rv.in{opacity:1;transform:none}
+
+@media (max-width:991px){
+  .hero-grid,.story,.duo{grid-template-columns:1fr}
+  .hero-photo{margin-bottom:0;order:-1}
+  .hero-photo img{aspect-ratio:16/10}
+  .pad-after-hero{padding-top:clamp(58px,7.5vw,96px)}
+  .who{grid-template-columns:1fr 1fr}
+  .hero-meta{grid-template-columns:repeat(2,auto)}
+  .team{grid-template-columns:repeat(4,1fr)}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .row{grid-template-columns:56px 1fr;gap:18px}
+  .row p{grid-column:2}
+}
+@media (max-width:767px){
+  body{font-size:16px}
+  .nav-links a:not(.btn){display:none}
+  .nav-in{padding:11px 20px;gap:14px}
+  .nav-logo img{height:34px}
+  .util-in{font-size:12px;padding:7px 20px;gap:6px 16px}
+  .util .right{margin-left:0;width:100%;gap:16px}
+  .team{grid-template-columns:repeat(3,1fr);gap:14px}
+  .svc{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .who{grid-template-columns:1fr}
+  .urgent{flex-direction:column;gap:6px}
+}
+@media (max-width:479px){
+  .team{grid-template-columns:repeat(2,1fr)}
+  .foot-grid{grid-template-columns:1fr}
+  .hero-cta .btn{width:100%}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important}
+  .rv,.hero-photo{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<div class="chrome">
+  <span><b>Design preview two, Clear Morning.</b> The body text is placeholder Latin on purpose. Real wording comes after you pick a direction.</span>
+  <a href="../">See all three</a>
+</div>
+
+<div class="util">
+  <div class="util-in">
+    <a href="tel:8088885228">808.888.5228</a>
+    <span>Monday to Friday, 9 AM to 5 PM</span>
+    <div class="right">
+      <a href="#connect">New patients start here</a>
+      <a class="portal" href="#connect">Current patients</a>
+    </div>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="nav-in">
+    <a class="nav-logo" href="#top"><img src="../img/kahala-logo.webp" alt="The Kahala Clinic for Children and Family"></a>
+    <nav class="nav-links">
+      <a href="#story">Our Story</a>
+      <a href="#team">Team Kahala</a>
+      <a href="#services">Services</a>
+      <a class="btn btn-gold" href="#connect">Connect</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="rv">
+      <div class="kicker">Child and family psychiatry, Honolulu</div>
+      <h1>Changing minds, changing lives</h1>
+      <p class="hero-sub">Optimizing child and family mental health, one family at a time. Care for children, teens, adults, and families.</p>
+      <div class="hero-cta">
+        <a class="btn btn-gold" href="#connect">Request an appointment</a>
+        <a class="btn btn-out" href="tel:8088885228">Call 808.888.5228</a>
+      </div>
+      <div class="hero-meta">
+        <div><b>Kahala Mall</b>4211 Waialae Avenue, Suite 208</div>
+        <div><b>Insurance</b>HMSA, HMAA, UHA, TRICARE</div>
+        <div><b>In practice since</b>2008</div>
+      </div>
+    </div>
+    <div class="hero-photo" id="heroPhoto">
+      <img src="../img/hero-family-sunset.webp" alt="A family together at sunset on Oahu">
+      <div class="hero-tag">Kahala, Honolulu</div>
+    </div>
+  </div>
+</section>
+
+<section class="pad-after-hero">
+  <div class="wrap">
+    <div class="head rv">
+      <div class="kicker">Who we care for</div>
+      <h2>Care across the whole family</h2>
+    </div>
+    <div class="who">
+      <div class="rv"><div class="n">01</div><h3>Children</h3><p>Lorem ipsum dolor sit amet consectetur.</p></div>
+      <div class="rv"><div class="n">02</div><h3>Teens</h3><p>Sed do eiusmod tempor incididunt ut labore.</p></div>
+      <div class="rv"><div class="n">03</div><h3>Adults</h3><p>Ut enim ad minim veniam quis nostrud.</p></div>
+      <div class="rv"><div class="n">04</div><h3>Families</h3><p>Duis aute irure dolor in reprehenderit.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="story" class="mist">
+  <div class="wrap story">
+    <div class="story-img rv">
+      <img src="../img/canoe.webp" alt="Outrigger canoes off Diamond Head">
+    </div>
+    <div class="rv">
+      <div class="kicker">Our Moolelo</div>
+      <h2>Rooted in Kahala since 2008</h2>
+      <p style="margin-top:16px">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <div class="cap">Placeholder caption. A real photo of the clinic and the team goes here.</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="head rv">
+      <div class="kicker">Our approach</div>
+      <h2>How we care for families</h2>
+    </div>
+    <div class="rows">
+      <div class="row rv"><div class="row-n">01</div><h3>One clinician, the whole team behind them</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div>
+      <div class="row rv"><div class="row-n">02</div><h3>Personalized, data-driven care</h3><p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div>
+      <div class="row rv"><div class="row-n">03</div><h3>Expertise in complex cases</h3><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="mist">
+  <div class="wrap">
+    <div class="head rv">
+      <div class="kicker">What we offer</div>
+      <h2>Evidence-based treatment</h2>
+    </div>
+    <div class="svc">
+      <div class="rv"><span>01</span>Individual, couples, and family therapy</div>
+      <div class="rv"><span>02</span>Medication management</div>
+      <div class="rv"><span>03</span>Sleep management</div>
+      <div class="rv"><span>04</span>Osteopathic Manipulative Medicine</div>
+    </div>
+  </div>
+</section>
+
+<section id="team" class="tall">
+  <div class="wrap">
+    <div class="head center rv">
+      <div class="kicker center">Team Kahala</div>
+      <h2>Meet our team</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.</p>
+    </div>
+    <div class="team">
+      <div class="pcard rv"><div class="pcard-img"><img src="../img/provider-keifer.webp" alt="Jason R. Keifer, MD"></div><div class="pcard-body"><div class="pcard-name">Jason R. Keifer</div><div class="pcard-cred">MD</div></div></div>
+      <div class="pcard rv"><div class="pcard-img"><img src="../img/provider-shipley.webp" alt="Erik M. Shipley, MD"></div><div class="pcard-body"><div class="pcard-name">Erik M. Shipley</div><div class="pcard-cred">MD</div></div></div>
+      <div class="pcard rv"><div class="pcard-img"><img src="../img/provider-pivonka.webp" alt="Jenny M. Pivonka, APRN-Rx"></div><div class="pcard-body"><div class="pcard-name">Jenny M. Pivonka</div><div class="pcard-cred">APRN-Rx</div></div></div>
+      <div class="pcard rv"><div class="pcard-img"><img src="../img/provider-bell.webp" alt="Cathy K. Bell, MD"></div><div class="pcard-body"><div class="pcard-name">Cathy K. Bell</div><div class="pcard-cred">MD</div></div></div>
+      <div class="pcard rv"><div class="pcard-img"><img src="../img/provider-patel.webp" alt="Jason G. Patel, MD"></div><div class="pcard-body"><div class="pcard-name">Jason G. Patel</div><div class="pcard-cred">MD</div></div></div>
+      <div class="pcard rv"><div class="pcard-img"><img src="../img/provider-monakhov.webp" alt="Aleta A. Monakhov, APRN-Rx"></div><div class="pcard-body"><div class="pcard-name">Aleta A. Monakhov</div><div class="pcard-cred">APRN-Rx</div></div></div>
+      <div class="pcard rv"><div class="pcard-img"><img src="../img/provider-horita.webp" alt="Josephine P. Horita, DO"></div><div class="pcard-body"><div class="pcard-name">Josephine P. Horita</div><div class="pcard-cred">DO</div></div></div>
+      <div class="pcard rv"><div class="pcard-img"><img src="../img/provider-bougard.webp" alt="KC G. Bougard, APRN-Rx"></div><div class="pcard-body"><div class="pcard-name">KC G. Bougard</div><div class="pcard-cred">APRN-Rx</div></div></div>
+      <div class="pcard rv"><div class="pcard-img"><img src="../img/provider-steinhelfer.webp" alt="Katie A. Steinhelfer, APRN-Rx"></div><div class="pcard-body"><div class="pcard-name">Katie A. Steinhelfer</div><div class="pcard-cred">APRN-Rx</div></div></div>
+      <div class="pcard rv"><div class="pcard-img"><img src="../img/provider-yang.webp" alt="Yvonne Yang, DO"></div><div class="pcard-body"><div class="pcard-name">Yvonne Yang</div><div class="pcard-cred">DO</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="mist">
+  <div class="wrap duo">
+    <div class="rv">
+      <div class="quote">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</div>
+      <div class="quote-by">A thankful mom</div>
+    </div>
+    <div class="ins rv">
+      <h3>Insurance we accept</h3>
+      <ul>
+        <li>HMSA PPO</li><li>HMSA HMO</li><li>HMAA</li><li>UHA</li><li>TRICARE</li><li>Private pay</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="connect" class="connect">
+  <div class="wrap">
+    <div class="head center rv">
+      <div class="kicker center">Become a patient</div>
+      <h2>Request an appointment</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor.</p>
+    </div>
+    <div class="panel rv">
+      <div class="step">
+        <div class="step-tag"><span class="step-num">1</span>Step one</div>
+        <h3>Choose the form that matches the patient</h3>
+        <div class="form-row">
+          <a class="form-btn" href="https://forms.myupdox.com/#/form/126846" target="_blank" rel="noopener">17 years and under</a>
+          <a class="form-btn" href="https://forms.myupdox.com/#/form/127510" target="_blank" rel="noopener">Adults, 18 and older</a>
+          <a class="form-btn" href="https://myupdox.com/form-dashboard/f/6bfdcdf8-c3f0-477f-8b59-b69ea61c8a4d" target="_blank" rel="noopener">Dr. Yang, Osteopathic Manipulative Medicine</a>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-tag"><span class="step-num">2</span>Step two</div>
+        <h3>Everyone completes this one</h3>
+        <div class="form-row" style="grid-template-columns:1fr">
+          <a class="form-btn solo" href="https://forms.myupdox.com/form/104486" target="_blank" rel="noopener">Form 2, all patients</a>
+        </div>
+      </div>
+    </div>
+    <div class="urgent rv">
+      <b>If this is urgent</b>
+      <p>Contact your regular doctor or go to your nearest emergency room. In a crisis, call or text 988 for the Suicide and Crisis Lifeline.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-logo rv">
+        <img src="../img/kahala-logo.webp" alt="The Kahala Clinic for Children and Family">
+        <p>Optimizing child and family mental health, one family at a time.</p>
+      </div>
+      <div class="rv">
+        <h4>Location</h4>
+        <p>Kahala Office Building<br>4211 Waialae Avenue, Suite 208<br>Honolulu, HI 96816</p>
+      </div>
+      <div class="rv">
+        <h4>Hours</h4>
+        <p>Monday to Friday<br>9 AM to 5 PM<br>Saturday and Sunday closed</p>
+      </div>
+      <div class="rv">
+        <h4>Contact</h4>
+        <p><a href="tel:8088885228">Phone 808.888.5228</a><br>Fax 808.213.7292<br><a href="mailto:kahalaclinic@myupdox.com">kahalaclinic@myupdox.com</a></p>
+      </div>
+    </div>
+    <div class="crisis rv">
+      <b>In a crisis</b>
+      <span>Call or text 988 for the Suicide and Crisis Lifeline, or call 911 for a life-threatening emergency.</span>
+    </div>
+    <div class="foot-bottom">
+      <span>The Kahala Clinic for Children and Family</span>
+      <span>Kahala Mall, Honolulu</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hp = document.getElementById('heroPhoto');
+  if(hp){ if(reduce){ hp.classList.add('in'); } else { setTimeout(function(){ hp.classList.add('in'); }, 120); } }
+  var items = document.querySelectorAll('.rv');
+  if(reduce || !('IntersectionObserver' in window)){
+    Array.prototype.forEach.call(items, function(el){ el.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      var sibs = Array.prototype.filter.call(e.target.parentElement.children, function(c){ return c.classList.contains('rv'); });
+      var i = sibs.indexOf(e.target);
+      e.target.style.transitionDelay = (i > 0 ? Math.min(i,8) * 60 : 0) + 'ms';
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    });
+  }, {rootMargin:'0px 0px -8% 0px', threshold:0.1});
+  Array.prototype.forEach.call(items, function(el){ io.observe(el); });
+})();
+</script>
+</body>
+</html>
