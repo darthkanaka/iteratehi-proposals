@@ -24,6 +24,7 @@ html{scroll-behavior:smooth}
 body{font-family:var(--body);background:var(--cream);color:var(--ink);line-height:1.65;font-size:17px;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
 a{color:inherit}
+a:not([href]){cursor:default}
 
 .chrome{background:#2A241D;color:#E6DCC9;font-size:12.5px;letter-spacing:.02em;padding:9px 20px;display:flex;gap:16px;align-items:center;justify-content:center;flex-wrap:wrap;text-align:center}
 .chrome b{color:#DEAF4E;font-weight:500}
@@ -190,7 +191,7 @@ section{padding:clamp(64px,9vw,108px) 0}
 <body>
 
 <div class="chrome">
-  <span><b>Design preview one, Sunlit.</b> The body text is placeholder Latin on purpose. Real wording comes after you pick a direction.</span>
+  <span><b>Design preview one, Sunlit.</b> A design comp, not a working page. The text is placeholder and nothing clicks.</span>
   <a href="../">See all three</a>
 </div>
 
@@ -199,11 +200,10 @@ section{padding:clamp(64px,9vw,108px) 0}
     <a class="nav-logo" href="#top"><img src="../img/kahala-logo.webp" alt="The Kahala Clinic for Children and Family"></a>
     <nav class="nav-links">
       <a href="#moolelo">Our Story</a>
-      <a href="#team">Team Kahala</a>
       <a href="#services">Services</a>
-      <a class="nav-phone" href="tel:8088885228">808.888.5228</a>
-      <a class="nav-call btn" href="tel:8088885228">Call</a>
-      <a class="btn btn-gold" href="#connect">Connect</a>
+      <a class="nav-phone">808.888.5228</a>
+      <a class="nav-call btn">Call</a>
+      <a class="btn btn-gold">Connect</a>
     </nav>
   </div>
 </header>
@@ -216,8 +216,8 @@ section{padding:clamp(64px,9vw,108px) 0}
     <h1>Changing minds, changing lives</h1>
     <p>Optimizing child and family mental health, one family at a time. Care for children, teens, adults, and families in Honolulu.</p>
     <div class="hero-cta">
-      <a class="btn btn-gold" href="#connect">Request an appointment</a>
-      <a class="btn btn-line" href="tel:8088885228">Call 808.888.5228</a>
+      <a class="btn btn-gold">Request an appointment</a>
+      <a class="btn btn-line">Call 808.888.5228</a>
     </div>
   </div>
 </section>
@@ -264,7 +264,7 @@ section{padding:clamp(64px,9vw,108px) 0}
   </div>
 </section>
 
-<section id="services" class="sand tight">
+<section id="services" class="cream tight">
   <div class="wrap">
     <div class="head rv">
       <div class="eyebrow">What we offer</div>
@@ -275,74 +275,6 @@ section{padding:clamp(64px,9vw,108px) 0}
       <div class="svc-item rv"><span class="dot"></span>Medication management</div>
       <div class="svc-item rv"><span class="dot"></span>Sleep management</div>
       <div class="svc-item rv"><span class="dot"></span>Osteopathic Manipulative Medicine</div>
-    </div>
-  </div>
-</section>
-
-<section id="team" class="white tall">
-  <div class="wrap">
-    <div class="head rv">
-      <div class="eyebrow">Team Kahala</div>
-      <h2>Meet our team</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </div>
-    <div class="team">
-      <div class="prov rv"><div class="prov-photo"><img src="../img/provider-keifer.webp" alt="Jason R. Keifer, MD"></div><div class="prov-name">Jason R. Keifer</div><div class="prov-cred">MD</div></div>
-      <div class="prov rv"><div class="prov-photo"><img src="../img/provider-shipley.webp" alt="Erik M. Shipley, MD"></div><div class="prov-name">Erik M. Shipley</div><div class="prov-cred">MD</div></div>
-      <div class="prov rv"><div class="prov-photo"><img src="../img/provider-pivonka.webp" alt="Jenny M. Pivonka, APRN-Rx"></div><div class="prov-name">Jenny M. Pivonka</div><div class="prov-cred">APRN-Rx</div></div>
-      <div class="prov rv"><div class="prov-photo"><img src="../img/provider-bell.webp" alt="Cathy K. Bell, MD"></div><div class="prov-name">Cathy K. Bell</div><div class="prov-cred">MD</div></div>
-      <div class="prov rv"><div class="prov-photo"><img src="../img/provider-patel.webp" alt="Jason G. Patel, MD"></div><div class="prov-name">Jason G. Patel</div><div class="prov-cred">MD</div></div>
-      <div class="prov rv"><div class="prov-photo"><img src="../img/provider-monakhov.webp" alt="Aleta A. Monakhov, APRN-Rx"></div><div class="prov-name">Aleta A. Monakhov</div><div class="prov-cred">APRN-Rx</div></div>
-      <div class="prov rv"><div class="prov-photo"><img src="../img/provider-horita.webp" alt="Josephine P. Horita, DO"></div><div class="prov-name">Josephine P. Horita</div><div class="prov-cred">DO</div></div>
-      <div class="prov rv"><div class="prov-photo"><img src="../img/provider-bougard.webp" alt="KC G. Bougard, APRN-Rx"></div><div class="prov-name">KC G. Bougard</div><div class="prov-cred">APRN-Rx</div></div>
-      <div class="prov rv"><div class="prov-photo"><img src="../img/provider-steinhelfer.webp" alt="Katie A. Steinhelfer, APRN-Rx"></div><div class="prov-name">Katie A. Steinhelfer</div><div class="prov-cred">APRN-Rx</div></div>
-      <div class="prov rv"><div class="prov-photo"><img src="../img/provider-yang.webp" alt="Yvonne Yang, DO"></div><div class="prov-name">Yvonne Yang</div><div class="prov-cred">DO</div></div>
-    </div>
-  </div>
-</section>
-
-<section class="cream tight">
-  <div class="wrap">
-    <div class="quote-wrap rv">
-      <div class="quote-mark">&ldquo;</div>
-      <div class="quote">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-      <div class="quote-by">A thankful mom</div>
-    </div>
-    <div class="ins rv">
-      <div class="ins-label">Insurance</div>
-      <p>We accept HMSA PPO and HMO, HMAA, UHA, TRICARE, and private pay.</p>
-    </div>
-  </div>
-</section>
-
-<section id="connect" class="connect">
-  <div class="wrap">
-    <div class="head rv">
-      <div class="eyebrow">Become a patient</div>
-      <h2>Request an appointment</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </div>
-    <div class="steps">
-      <div class="step rv">
-        <div class="step-tag"><span class="step-num">1</span>Step one</div>
-        <h3>Choose the form that matches the patient</h3>
-        <div class="form-row">
-          <a class="form-btn" href="https://forms.myupdox.com/#/form/126846" target="_blank" rel="noopener">17 years and under</a>
-          <a class="form-btn" href="https://forms.myupdox.com/#/form/127510" target="_blank" rel="noopener">Adults, 18 and older</a>
-          <a class="form-btn" href="https://myupdox.com/form-dashboard/f/6bfdcdf8-c3f0-477f-8b59-b69ea61c8a4d" target="_blank" rel="noopener">Dr. Yang, Osteopathic Manipulative Medicine</a>
-        </div>
-      </div>
-      <div class="step rv">
-        <div class="step-tag"><span class="step-num">2</span>Step two</div>
-        <h3>Everyone completes this one</h3>
-        <div class="form-row" style="grid-template-columns:1fr">
-          <a class="form-btn solo" href="https://forms.myupdox.com/form/104486" target="_blank" rel="noopener">Form 2, all patients</a>
-        </div>
-      </div>
-    </div>
-    <div class="urgent rv">
-      <b>If this is urgent</b>
-      <p>Contact your regular doctor or go to your nearest emergency room. In a crisis, call or text 988 for the Suicide and Crisis Lifeline.</p>
     </div>
   </div>
 </section>
@@ -365,7 +297,7 @@ section{padding:clamp(64px,9vw,108px) 0}
       </div>
       <div class="rv">
         <h4>Contact</h4>
-        <p><a href="tel:8088885228">Phone 808.888.5228</a><br>Fax 808.213.7292<br><a href="mailto:kahalaclinic@myupdox.com">kahalaclinic@myupdox.com</a></p>
+        <p>Phone 808.888.5228<br>Fax 808.213.7292<br>kahalaclinic@myupdox.com</p>
       </div>
     </div>
     <div class="foot-bottom">

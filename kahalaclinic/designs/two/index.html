@@ -23,6 +23,7 @@ html{scroll-behavior:smooth}
 body{font-family:var(--body);background:var(--paper);color:var(--ink);line-height:1.65;font-size:16.5px;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
 a{color:inherit}
+a:not([href]){cursor:default}
 
 .chrome{background:#15181A;color:#D7D9D6;font-size:12.5px;padding:9px 20px;display:flex;gap:16px;align-items:center;justify-content:center;flex-wrap:wrap;text-align:center}
 .chrome b{color:#DEAF4E;font-weight:600}
@@ -149,7 +150,7 @@ section{padding:clamp(58px,7.5vw,96px) 0}
 .urgent p{color:rgba(230,236,237,.78);font-size:14.5px}
 
 /* footer */
-.foot{background:var(--mist);border-top:1px solid var(--line);padding:clamp(52px,6vw,74px) 0 0}
+.foot{background:var(--paper);border-top:1px solid var(--line);padding:clamp(52px,6vw,74px) 0 0}
 .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:34px}
 .foot-logo img{height:46px;margin-bottom:14px}
 .foot h4{font-family:var(--display);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);font-weight:700;margin-bottom:12px}
@@ -201,17 +202,17 @@ section{padding:clamp(58px,7.5vw,96px) 0}
 <body>
 
 <div class="chrome">
-  <span><b>Design preview two, Clear Morning.</b> The body text is placeholder Latin on purpose. Real wording comes after you pick a direction.</span>
+  <span><b>Design preview two, Clear Morning.</b> A design comp, not a working page. The text is placeholder and nothing clicks.</span>
   <a href="../">See all three</a>
 </div>
 
 <div class="util">
   <div class="util-in">
-    <a href="tel:8088885228">808.888.5228</a>
+    <span>808.888.5228</span>
     <span>Monday to Friday, 9 AM to 5 PM</span>
     <div class="right">
-      <a href="#connect">New patients start here</a>
-      <a class="portal" href="#connect">Current patients</a>
+      <span>New patients start here</span>
+      <span class="portal">Current patients</span>
     </div>
   </div>
 </div>
@@ -221,9 +222,8 @@ section{padding:clamp(58px,7.5vw,96px) 0}
     <a class="nav-logo" href="#top"><img src="../img/kahala-logo.webp" alt="The Kahala Clinic for Children and Family"></a>
     <nav class="nav-links">
       <a href="#story">Our Story</a>
-      <a href="#team">Team Kahala</a>
       <a href="#services">Services</a>
-      <a class="btn btn-gold" href="#connect">Connect</a>
+      <a class="btn btn-gold">Connect</a>
     </nav>
   </div>
 </header>
@@ -235,8 +235,8 @@ section{padding:clamp(58px,7.5vw,96px) 0}
       <h1>Changing minds, changing lives</h1>
       <p class="hero-sub">Optimizing child and family mental health, one family at a time. Care for children, teens, adults, and families.</p>
       <div class="hero-cta">
-        <a class="btn btn-gold" href="#connect">Request an appointment</a>
-        <a class="btn btn-out" href="tel:8088885228">Call 808.888.5228</a>
+        <a class="btn btn-gold">Request an appointment</a>
+        <a class="btn btn-out">Call 808.888.5228</a>
       </div>
       <div class="hero-meta">
         <div><b>Kahala Mall</b>4211 Waialae Avenue, Suite 208</div>
@@ -310,75 +310,6 @@ section{padding:clamp(58px,7.5vw,96px) 0}
   </div>
 </section>
 
-<section id="team" class="tall">
-  <div class="wrap">
-    <div class="head center rv">
-      <div class="kicker center">Team Kahala</div>
-      <h2>Meet our team</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.</p>
-    </div>
-    <div class="team">
-      <div class="pcard rv"><div class="pcard-img"><img src="../img/provider-keifer.webp" alt="Jason R. Keifer, MD"></div><div class="pcard-body"><div class="pcard-name">Jason R. Keifer</div><div class="pcard-cred">MD</div></div></div>
-      <div class="pcard rv"><div class="pcard-img"><img src="../img/provider-shipley.webp" alt="Erik M. Shipley, MD"></div><div class="pcard-body"><div class="pcard-name">Erik M. Shipley</div><div class="pcard-cred">MD</div></div></div>
-      <div class="pcard rv"><div class="pcard-img"><img src="../img/provider-pivonka.webp" alt="Jenny M. Pivonka, APRN-Rx"></div><div class="pcard-body"><div class="pcard-name">Jenny M. Pivonka</div><div class="pcard-cred">APRN-Rx</div></div></div>
-      <div class="pcard rv"><div class="pcard-img"><img src="../img/provider-bell.webp" alt="Cathy K. Bell, MD"></div><div class="pcard-body"><div class="pcard-name">Cathy K. Bell</div><div class="pcard-cred">MD</div></div></div>
-      <div class="pcard rv"><div class="pcard-img"><img src="../img/provider-patel.webp" alt="Jason G. Patel, MD"></div><div class="pcard-body"><div class="pcard-name">Jason G. Patel</div><div class="pcard-cred">MD</div></div></div>
-      <div class="pcard rv"><div class="pcard-img"><img src="../img/provider-monakhov.webp" alt="Aleta A. Monakhov, APRN-Rx"></div><div class="pcard-body"><div class="pcard-name">Aleta A. Monakhov</div><div class="pcard-cred">APRN-Rx</div></div></div>
-      <div class="pcard rv"><div class="pcard-img"><img src="../img/provider-horita.webp" alt="Josephine P. Horita, DO"></div><div class="pcard-body"><div class="pcard-name">Josephine P. Horita</div><div class="pcard-cred">DO</div></div></div>
-      <div class="pcard rv"><div class="pcard-img"><img src="../img/provider-bougard.webp" alt="KC G. Bougard, APRN-Rx"></div><div class="pcard-body"><div class="pcard-name">KC G. Bougard</div><div class="pcard-cred">APRN-Rx</div></div></div>
-      <div class="pcard rv"><div class="pcard-img"><img src="../img/provider-steinhelfer.webp" alt="Katie A. Steinhelfer, APRN-Rx"></div><div class="pcard-body"><div class="pcard-name">Katie A. Steinhelfer</div><div class="pcard-cred">APRN-Rx</div></div></div>
-      <div class="pcard rv"><div class="pcard-img"><img src="../img/provider-yang.webp" alt="Yvonne Yang, DO"></div><div class="pcard-body"><div class="pcard-name">Yvonne Yang</div><div class="pcard-cred">DO</div></div></div>
-    </div>
-  </div>
-</section>
-
-<section class="mist">
-  <div class="wrap duo">
-    <div class="rv">
-      <div class="quote">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</div>
-      <div class="quote-by">A thankful mom</div>
-    </div>
-    <div class="ins rv">
-      <h3>Insurance we accept</h3>
-      <ul>
-        <li>HMSA PPO</li><li>HMSA HMO</li><li>HMAA</li><li>UHA</li><li>TRICARE</li><li>Private pay</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section id="connect" class="connect">
-  <div class="wrap">
-    <div class="head center rv">
-      <div class="kicker center">Become a patient</div>
-      <h2>Request an appointment</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor.</p>
-    </div>
-    <div class="panel rv">
-      <div class="step">
-        <div class="step-tag"><span class="step-num">1</span>Step one</div>
-        <h3>Choose the form that matches the patient</h3>
-        <div class="form-row">
-          <a class="form-btn" href="https://forms.myupdox.com/#/form/126846" target="_blank" rel="noopener">17 years and under</a>
-          <a class="form-btn" href="https://forms.myupdox.com/#/form/127510" target="_blank" rel="noopener">Adults, 18 and older</a>
-          <a class="form-btn" href="https://myupdox.com/form-dashboard/f/6bfdcdf8-c3f0-477f-8b59-b69ea61c8a4d" target="_blank" rel="noopener">Dr. Yang, Osteopathic Manipulative Medicine</a>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-tag"><span class="step-num">2</span>Step two</div>
-        <h3>Everyone completes this one</h3>
-        <div class="form-row" style="grid-template-columns:1fr">
-          <a class="form-btn solo" href="https://forms.myupdox.com/form/104486" target="_blank" rel="noopener">Form 2, all patients</a>
-        </div>
-      </div>
-    </div>
-    <div class="urgent rv">
-      <b>If this is urgent</b>
-      <p>Contact your regular doctor or go to your nearest emergency room. In a crisis, call or text 988 for the Suicide and Crisis Lifeline.</p>
-    </div>
-  </div>
-</section>
-
 <footer class="foot">
   <div class="wrap">
     <div class="foot-grid">
@@ -396,7 +327,7 @@ section{padding:clamp(58px,7.5vw,96px) 0}
       </div>
       <div class="rv">
         <h4>Contact</h4>
-        <p><a href="tel:8088885228">Phone 808.888.5228</a><br>Fax 808.213.7292<br><a href="mailto:kahalaclinic@myupdox.com">kahalaclinic@myupdox.com</a></p>
+        <p>Phone 808.888.5228<br>Fax 808.213.7292<br>kahalaclinic@myupdox.com</p>
       </div>
     </div>
     <div class="crisis rv">
