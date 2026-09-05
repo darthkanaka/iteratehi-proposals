@@ -110,8 +110,10 @@ section{padding:clamp(58px,7.5vw,96px) 0}
 
 /* services list */
 .svc{display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(30px,5vw,64px)}
-.svc div{display:flex;gap:16px;align-items:baseline;padding:19px 0;border-bottom:1px solid var(--line);font-family:var(--display);font-weight:600;font-size:17px;letter-spacing:-.015em}
-.svc span{font-family:var(--body);font-size:12px;color:var(--gold);font-weight:600;letter-spacing:.08em;flex:none}
+.svc div{display:flex;gap:16px;align-items:baseline;padding:19px 0;border-bottom:1px solid var(--line);font-family:var(--display);font-weight:600;font-size:17px;letter-spacing:-.015em;transition:border-color .3s ease,color .3s ease}
+.svc div:hover{border-bottom-color:var(--gold)}
+.svc div:hover span{color:var(--gold-deep)}
+.svc span{font-family:var(--body);font-size:12px;color:var(--gold);font-weight:600;letter-spacing:.08em;flex:none;transition:color .3s ease}
 
 /* team */
 .team{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
