@@ -67,7 +67,8 @@ section.tight{padding:clamp(52px,6vw,80px) 0}
 .hero-cta{display:flex;gap:11px;flex-wrap:wrap;margin-top:26px}
 .hero-mono{margin-bottom:22px}
 .facts{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);margin-top:clamp(40px,4.6vw,64px)}
-.fact{padding:22px 24px 26px 0;border-right:1px solid var(--line)}
+.fact{padding:22px 28px 26px 28px;border-right:1px solid var(--line)}
+.fact:first-child{padding-left:0}
 .fact:last-child{border-right:0;padding-right:0}
 .fact-l{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
 .fact p{color:var(--ink);font-size:14.5px;line-height:1.5}
@@ -124,8 +125,9 @@ section.tight{padding:clamp(52px,6vw,80px) 0}
   .hero-grid{gap:26px;align-items:start}
   .hero-side{padding-bottom:0}
   .facts{grid-template-columns:1fr 1fr}
-  .fact{padding-right:22px}
-  .fact:nth-child(2n){border-right:0;padding-right:0}
+  .fact{padding-left:26px;padding-right:26px}
+  .fact:nth-child(odd){padding-left:0}
+  .fact:nth-child(even){border-right:0;padding-right:0}
   .fact:nth-child(n+3){border-top:1px solid var(--line)}
   .row{grid-template-columns:auto 1fr;gap:16px}
   .row p{grid-column:2}
@@ -138,7 +140,7 @@ section.tight{padding:clamp(52px,6vw,80px) 0}
   .nav-call{display:inline-flex;border:1px solid var(--line-strong)}
   .nav-logo img{height:36px}
   .facts{grid-template-columns:1fr}
-  .fact{border-right:0;padding-right:0;border-top:1px solid var(--line)}
+  .fact{border-right:0;padding-left:0;padding-right:0;border-top:1px solid var(--line)}
   .fact:first-child{border-top:0}
   .band img{aspect-ratio:4/3}
 }
