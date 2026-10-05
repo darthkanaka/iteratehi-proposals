@@ -93,20 +93,28 @@ section.tight{padding:clamp(52px,6vw,80px) 0}
 .mission .bar{width:64px;height:3px;background:var(--gold);margin-bottom:26px}
 .mission p{margin-top:22px;font-size:17.5px;max-width:52ch}
 
-/* approach, numbered rows */
-.head{display:grid;grid-template-columns:7fr 5fr;gap:30px;align-items:end;margin-bottom:clamp(30px,4vw,50px)}
-.rows{border-top:1px solid var(--line)}
-.row{display:grid;grid-template-columns:auto 5fr 6fr;gap:clamp(18px,3.4vw,52px);align-items:start;padding:clamp(24px,3vw,34px) 0;border-bottom:1px solid var(--line);transition:background .3s ease,padding-left .3s ease}
-.row:hover{background:var(--paper-2);padding-left:14px}
-.row-n{font-family:var(--mono);font-size:12px;color:var(--gold);padding-top:3px;letter-spacing:.08em}
-.row p{font-size:15.5px}
+/* approach, the heading holds still while the statements scroll past it */
+.care{display:grid;grid-template-columns:5fr 7fr;gap:clamp(32px,6vw,96px);align-items:start}
+.care-side{position:sticky;top:112px}
+.care-side p{margin-top:18px;font-size:16.5px;max-width:34ch}
+.care-bar{width:64px;height:3px;background:var(--gold);margin-top:28px}
+.care-item{padding-bottom:clamp(56px,8vw,120px)}
+.care-item:last-child{padding-bottom:0}
+.care-tag{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;color:var(--gold);margin-bottom:16px}
+.care-item h3{font-size:clamp(23px,2.5vw,31px);line-height:1.18;letter-spacing:-.025em;max-width:26ch}
+.care-item p{margin-top:14px;font-size:16.5px;max-width:46ch}
 
-/* services index */
-.index{border-top:1px solid var(--line)}
-.ix{display:grid;grid-template-columns:auto 1fr;gap:clamp(18px,3vw,40px);align-items:baseline;padding:clamp(20px,2.4vw,28px) 0;border-bottom:1px solid var(--line);transition:border-color .3s ease,color .3s ease}
-.ix:hover{border-bottom-color:var(--gold)}
-.ix-n{font-family:var(--mono);font-size:11.5px;color:var(--gold);letter-spacing:.08em}
-.ix-t{font-family:var(--display);font-weight:600;font-size:clamp(19px,2.3vw,27px);letter-spacing:-.025em}
+/* treatment, an open grid divided by one hairline cross */
+.offer{background:var(--paper-2);border-top:1px solid var(--line)}
+.offer-head{display:grid;grid-template-columns:7fr 5fr;gap:30px;align-items:end;margin-bottom:clamp(34px,4vw,56px)}
+.offer-head p{font-size:16.5px;max-width:36ch}
+.matrix{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line-strong)}
+.cell{background:var(--paper-2);padding:clamp(28px,3.4vw,44px) clamp(24px,3.4vw,48px);min-height:clamp(180px,18vw,240px);display:flex;flex-direction:column;justify-content:space-between;gap:28px;transition:background-color .3s ease}
+.cell:nth-child(odd){padding-left:0}
+.cell:hover{background:var(--paper)}
+.cell-n{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;color:var(--gold)}
+.cell-t{font-family:var(--display);font-weight:600;font-size:clamp(22px,2.4vw,30px);line-height:1.15;letter-spacing:-.025em;color:var(--ink)}
+.cell-p{margin-top:10px;font-size:15px;max-width:34ch}
 
 /* footer */
 .foot{background:var(--ink);color:#E6E2D9;padding:clamp(54px,6vw,78px) 0 0}
@@ -121,7 +129,8 @@ section.tight{padding:clamp(52px,6vw,80px) 0}
 .rv.in{opacity:1;transform:none}
 
 @media (max-width:991px){
-  .hero-grid,.story,.head,.foot-grid{grid-template-columns:1fr}
+  .hero-grid,.story,.care,.offer-head,.foot-grid{grid-template-columns:1fr}
+  .care-side{position:static}
   .hero-grid{gap:26px;align-items:start}
   .hero-side{padding-bottom:0}
   .facts{grid-template-columns:1fr 1fr}
@@ -129,8 +138,6 @@ section.tight{padding:clamp(52px,6vw,80px) 0}
   .fact:nth-child(odd){padding-left:0}
   .fact:nth-child(even){border-right:0;padding-right:0}
   .fact:nth-child(n+3){border-top:1px solid var(--line)}
-  .row{grid-template-columns:auto 1fr;gap:16px}
-  .row p{grid-column:2}
   .story .shot{order:-1;max-width:420px}
   .band img{aspect-ratio:16/9}
   .foot-grid{gap:26px}
@@ -143,6 +150,8 @@ section.tight{padding:clamp(52px,6vw,80px) 0}
   .fact{border-right:0;padding-left:0;padding-right:0;border-top:1px solid var(--line)}
   .fact:first-child{border-top:0}
   .band img{aspect-ratio:4/3}
+  .matrix{grid-template-columns:1fr}
+  .cell{min-height:0;padding-left:0;padding-right:0}
 }
 @media (prefers-reduced-motion: reduce){
   .rv,.band img{transition:none}
@@ -223,34 +232,35 @@ section.tight{padding:clamp(52px,6vw,80px) 0}
 </section>
 
 <section>
-  <div class="wrap">
-    <div class="head rv">
-      <div>
-        <div class="mono" style="margin-bottom:14px">Our approach</div>
-        <h2>How we care for families</h2>
-      </div>
+  <div class="wrap care">
+    <div class="care-side rv">
+      <div class="mono" style="margin-bottom:14px">Our approach</div>
+      <h2>How we care for families</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+      <div class="care-bar"></div>
     </div>
-    <div class="rows">
-      <div class="row rv"><div class="row-n">01</div><h3>One clinician, the whole team behind them</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p></div>
-      <div class="row rv"><div class="row-n">02</div><h3>Personalized, data-driven care</h3><p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p></div>
-      <div class="row rv"><div class="row-n">03</div><h3>Expertise in complex cases</h3><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.</p></div>
+    <div class="care-list">
+      <div class="care-item rv"><div class="care-tag">01 / 03</div><h3>One clinician, the whole team behind them</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div>
+      <div class="care-item rv"><div class="care-tag">02 / 03</div><h3>Personalized, data-driven care</h3><p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div>
+      <div class="care-item rv"><div class="care-tag">03 / 03</div><h3>Expertise in complex cases</h3><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
     </div>
   </div>
 </section>
 
-<section id="services" class="tight">
+<section id="services" class="offer">
   <div class="wrap">
-    <div class="head rv">
+    <div class="offer-head rv">
       <div>
         <div class="mono" style="margin-bottom:14px">What we offer</div>
         <h2>Evidence-based treatment</h2>
       </div>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
     </div>
-    <div class="index">
-      <div class="ix rv"><div class="ix-n">01</div><div class="ix-t">Individual, couples, and family therapy</div></div>
-      <div class="ix rv"><div class="ix-n">02</div><div class="ix-t">Medication management</div></div>
-      <div class="ix rv"><div class="ix-n">03</div><div class="ix-t">Sleep management</div></div>
-      <div class="ix rv"><div class="ix-n">04</div><div class="ix-t">Osteopathic Manipulative Medicine</div></div>
+    <div class="matrix">
+      <div class="cell rv"><div class="cell-n">01 / 04</div><div><div class="cell-t">Individual, couples, and family therapy</div><p class="cell-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div></div>
+      <div class="cell rv"><div class="cell-n">02 / 04</div><div><div class="cell-t">Medication management</div><p class="cell-p">Sed do eiusmod tempor incididunt ut labore et dolore.</p></div></div>
+      <div class="cell rv"><div class="cell-n">03 / 04</div><div><div class="cell-t">Sleep management</div><p class="cell-p">Ut enim ad minim veniam, quis nostrud exercitation.</p></div></div>
+      <div class="cell rv"><div class="cell-n">04 / 04</div><div><div class="cell-t">Osteopathic Manipulative Medicine</div><p class="cell-p">Duis aute irure dolor in reprehenderit in voluptate.</p></div></div>
     </div>
   </div>
 </section>
