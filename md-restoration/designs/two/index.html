@@ -32,7 +32,7 @@ a:not([href]){cursor:default}
 
 .wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
 h1,h2,h3{font-family:var(--sans);font-weight:800;letter-spacing:-.03em;line-height:1}
-h2{font-size:clamp(34px,4.6vw,60px)}
+h2{font-size:clamp(30px,3.4vw,46px)}
 h3{font-size:clamp(22px,2.2vw,28px);font-weight:700;letter-spacing:-.02em;line-height:1.15}
 p{color:var(--muted)}
 .label{font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);font-weight:500}
@@ -65,14 +65,14 @@ section{padding:clamp(70px,8vw,120px) 0}
 .ticket span{font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;padding:14px 26px 14px 0;margin-right:26px;border-right:1px solid var(--rule);display:flex;align-items:center;gap:9px;white-space:nowrap}
 .ticket span:last-child{border-right:0}
 .dot{width:9px;height:9px;background:var(--gold);border-radius:50%;box-shadow:0 0 0 3px rgba(254,198,63,.25)}
-.hero-type{padding:clamp(40px,6vw,82px) 0 clamp(34px,4vw,52px)}
-.hero h1{font-size:clamp(46px,7.6vw,112px);max-width:13.5ch}
+.hero-type{padding:clamp(30px,3.4vw,48px) 0 clamp(26px,2.6vw,36px)}
+.hero h1{font-size:clamp(36px,4.6vw,66px);max-width:21ch;letter-spacing:-.035em}
 .hero h1 .amp{color:var(--navy);font-weight:500}
-.hero-row{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-top:clamp(28px,3vw,40px);flex-wrap:wrap}
-.hero-sub{font-size:19px;max-width:40ch;color:var(--ink)}
+.hero-row{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-top:clamp(18px,2vw,26px);flex-wrap:wrap}
+.hero-sub{font-size:18px;max-width:46ch;color:var(--ink)}
 .hero-cta{display:flex;gap:10px;flex-wrap:wrap}
-.band{position:relative;height:clamp(280px,36vw,540px);overflow:hidden;background:var(--paper-2)}
-.band img{width:100%;height:100%;object-fit:cover;object-position:50% 78%}
+.band{position:relative;height:clamp(300px,42vw,600px);overflow:hidden;background:var(--paper-2)}
+.band img{width:100%;height:100%;object-fit:cover;object-position:50% 0%}
 .caption{display:flex;justify-content:space-between;gap:20px;padding:12px 0 0;flex-wrap:wrap}
 .js .hero h1,.js .hero-row{opacity:0;transform:translateY(18px)}
 .js .band{opacity:0}
@@ -103,16 +103,19 @@ section{padding:clamp(70px,8vw,120px) 0}
 /* mission, one line set big */
 .mission{padding:clamp(60px,7vw,100px) 0;background:var(--white);border-top:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink)}
 .mission-grid{display:grid;grid-template-columns:200px 1fr;gap:clamp(30px,5vw,70px)}
-.mission h2{font-size:clamp(40px,6.4vw,92px);line-height:.98;max-width:15ch}
+.mission h2{font-size:clamp(32px,4.2vw,58px);line-height:1.02;max-width:20ch}
 .mark{background:linear-gradient(transparent 58%,var(--gold-soft) 58%,var(--gold-soft) 92%,transparent 92%);padding:0 .06em}
 .mission p{margin-top:26px;max-width:52ch}
 
 /* approach, heading holds while the steps pass */
 .approach-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,6vw,96px);align-items:start}
-.side{position:sticky;top:112px}
+.side{position:sticky;top:104px}
+.side-ph{margin-top:26px;aspect-ratio:16/10;overflow:hidden;background:var(--paper-2)}
+.side-ph img{width:100%;height:100%;object-fit:cover;object-position:50% 38%}
+.side .caption{padding-top:10px}
 .side h2{margin:14px 0 20px}
 .side p{max-width:38ch}
-.step{border-top:1.5px solid var(--ink);padding:26px 0 clamp(70px,8vw,120px)}
+.step{border-top:1.5px solid var(--ink);padding:26px 0 clamp(120px,13vw,190px)}
 .step:last-child{padding-bottom:20px}
 .step .label{display:flex;justify-content:space-between;margin-bottom:18px}
 .step h3{margin-bottom:14px;max-width:20ch}
@@ -128,7 +131,10 @@ section{padding:clamp(70px,8vw,120px) 0}
 .cell:hover:not(.call){background:var(--white)}
 .cell:nth-child(3n+1):hover{background:transparent}
 .cell .label{color:var(--muted)}
-.cell h3{margin:44px 0 10px}
+.cell h3{margin:16px 0 8px;font-size:clamp(20px,1.9vw,24px)}
+.cell-ph{aspect-ratio:16/10;overflow:hidden;margin-top:16px;background:var(--paper-2)}
+.cell-ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.3,1)}
+.cell:hover .cell-ph img{transform:scale(1.04)}
 .cell p{font-size:15.5px}
 .cell .n{display:inline-block;padding:2px 6px;margin-left:-6px;transition:background .25s ease}
 .cell:hover .n{background:var(--gold)}
@@ -143,7 +149,7 @@ section{padding:clamp(70px,8vw,120px) 0}
 .foot .label{color:var(--gold);display:block;margin-bottom:12px;font-size:12px}
 .foot p{font-size:14.5px;color:#C8CEDA;line-height:1.75}
 .foot-brand img{width:58px;height:58px;margin-bottom:14px}
-.foot-word{font-weight:800;font-size:clamp(54px,11vw,170px);letter-spacing:-.05em;line-height:.8;color:#fff;margin-top:clamp(50px,6vw,80px);white-space:nowrap;overflow:hidden}
+.foot-word{font-weight:800;font-size:clamp(44px,6.4vw,96px);letter-spacing:-.05em;line-height:.8;color:#fff;margin-top:clamp(50px,6vw,80px);white-space:nowrap;overflow:hidden}
 .foot-word span{color:var(--gold)}
 .foot-bottom{border-top:1px solid rgba(255,255,255,.14);margin-top:20px;padding:18px 0 24px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#8D96AA}
 
@@ -179,6 +185,7 @@ section{padding:clamp(70px,8vw,120px) 0}
   .ticket span{padding:10px 0;border-bottom:1px solid var(--rule)}
   .ticket span:last-child{border-bottom:0}
   .hero-sub{font-size:17px}
+  .band img{object-position:74% 0%}
   .hero-cta{width:100%}
   .hero-cta .btn{flex:1 1 100%}
   .row{flex-wrap:wrap;gap:4px}
@@ -189,7 +196,7 @@ section{padding:clamp(70px,8vw,120px) 0}
   .cell:first-child{border-top:0}
   .cell:nth-child(-n+3){border-top:1px solid var(--ink)}
   .cell:first-child{border-top:0}
-  .cell h3{margin-top:20px}
+  .cell h3{margin-top:14px}
   .cell.call{padding-left:22px;margin:0 -20px;padding-right:22px}
   .foot-bottom{padding-bottom:84px}
   .foot-word{font-size:12.5vw;white-space:normal;line-height:.9}
@@ -243,8 +250,8 @@ section{padding:clamp(70px,8vw,120px) 0}
         </div>
       </div>
     </div>
-    <div class="band"><img src="../img/crew-framing.webp" alt="An MD Restoration crew framing a plywood wall under a blue sky"></div>
-    <div class="caption"><span class="label dim">Fig. 01 · An MD crew framing a wall</span><span class="label dim">Emergency water extraction · Fire · Mold · Asbestos</span></div>
+    <div class="band"><img src="../img/water-extraction.webp" alt="An MD Restoration technician extracting water from a carpet"></div>
+    <div class="caption"><span class="label dim">Fig. 01 · Emergency water extraction</span><span class="label dim">Emergency water extraction · Fire · Mold · Asbestos</span></div>
   </div>
 </section>
 
@@ -305,6 +312,8 @@ section{padding:clamp(70px,8vw,120px) 0}
       <span class="label dim">How a job runs</span>
       <h2>1 stop shop restoration experience</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <div class="side-ph"><img src="../img/fire-crew-hall.webp" alt="MD Restoration technicians in white suits cleaning soot from a hallway"></div>
+      <div class="caption"><span class="label dim">Fig. 03 · Fire damage cleanup</span></div>
     </div>
     <div class="steps">
       <div class="step rv"><div class="label"><span>Step 01</span><span class="dim">The call</span></div><h3>Emergency Response 24/7</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p></div>
@@ -321,11 +330,11 @@ section{padding:clamp(70px,8vw,120px) 0}
       <p style="max-width:44ch">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
     </div>
     <div class="grid6">
-      <div class="cell rv"><span class="label"><span class="n">01</span></span><h3>Emergency 24/7 Water Extraction</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div>
-      <div class="cell rv"><span class="label"><span class="n">02</span></span><h3>Fire Damage Restoration</h3><p>Sed do eiusmod tempor incididunt ut labore et dolore.</p></div>
-      <div class="cell rv"><span class="label"><span class="n">03</span></span><h3>Mold Remediation</h3><p>Ut enim ad minim veniam, quis nostrud exercitation.</p></div>
-      <div class="cell rv"><span class="label"><span class="n">04</span></span><h3>Asbestos Abatement</h3><p>Duis aute irure dolor in reprehenderit in voluptate.</p></div>
-      <div class="cell rv"><span class="label"><span class="n">05</span></span><h3>General Contractor</h3><p>Excepteur sint occaecat cupidatat non proident.</p></div>
+      <div class="cell rv"><span class="label"><span class="n">01</span></span><div class="cell-ph"><img src="../img/svc-water.webp" alt=""></div><h3>Emergency 24/7 Water Extraction</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div>
+      <div class="cell rv"><span class="label"><span class="n">02</span></span><div class="cell-ph"><img src="../img/svc-fire.webp" alt=""></div><h3>Fire Damage Restoration</h3><p>Sed do eiusmod tempor incididunt ut labore et dolore.</p></div>
+      <div class="cell rv"><span class="label"><span class="n">03</span></span><div class="cell-ph"><img src="../img/svc-mold.webp" alt=""></div><h3>Mold Remediation</h3><p>Ut enim ad minim veniam, quis nostrud exercitation.</p></div>
+      <div class="cell rv"><span class="label"><span class="n">04</span></span><div class="cell-ph"><img src="../img/svc-asbestos.webp" alt=""></div><h3>Asbestos Abatement</h3><p>Duis aute irure dolor in reprehenderit in voluptate.</p></div>
+      <div class="cell rv"><span class="label"><span class="n">05</span></span><div class="cell-ph"><img src="../img/svc-gc.webp" alt=""></div><h3>General Contractor</h3><p>Excepteur sint occaecat cupidatat non proident.</p></div>
       <div class="cell call rv"><span class="label">24-hour Call Center</span><b>808-528-3434</b><p>Lorem ipsum dolor sit amet.</p></div>
     </div>
   </div>
