@@ -9,6 +9,7 @@ Each client gets a folder. The folder name becomes the URL path.
 ```
 /                       → root placeholder ("proposals are accessed by direct link")
 /kahalaclinic           → Kahala Clinic for Children and Family
+/md-restoration         → MD Restoration (redesign mockup pitch)
 ```
 
 ## Adding a new client

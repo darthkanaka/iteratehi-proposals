@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Direction Two, Dispatch | MD Restoration Design Preview</title>
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F3F0E8; --paper-2:#EAE5D9; --white:#FFFFFF;
+  --ink:#0C1A33; --navy:#012C63; --muted:#59617A; --rule:#CBC3B1;
+  --gold:#FEC63F; --gold-soft:rgba(254,198,63,.55);
+  --sans:'Archivo',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  --max:1240px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.62;font-size:17px;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+a:not([href]){cursor:default}
+.nw{white-space:nowrap}
+
+.chrome{background:var(--ink);color:#C8CEDA;font-size:12.5px;letter-spacing:.02em;padding:9px 20px;display:flex;gap:16px;align-items:center;justify-content:center;flex-wrap:wrap;text-align:center}
+.chrome b{color:var(--gold);font-weight:600}
+.chrome a{color:#C8CEDA;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+
+.wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+h1,h2,h3{font-family:var(--sans);font-weight:800;letter-spacing:-.03em;line-height:1}
+h2{font-size:clamp(34px,4.6vw,60px)}
+h3{font-size:clamp(22px,2.2vw,28px);font-weight:700;letter-spacing:-.02em;line-height:1.15}
+p{color:var(--muted)}
+.label{font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);font-weight:500}
+.label.dim{color:var(--muted)}
+section{padding:clamp(70px,8vw,120px) 0}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--mono);font-weight:600;font-size:14.5px;letter-spacing:.06em;text-transform:uppercase;padding:17px 26px;border-radius:3px;border:1.5px solid var(--ink);text-decoration:none;white-space:nowrap;transition:background .2s ease,color .2s ease,border-color .2s ease}
+.btn-ink{background:var(--ink);color:#fff}
+.btn-ink:hover{background:var(--navy);border-color:var(--navy)}
+.btn-line{background:transparent;color:var(--ink)}
+.btn-line:hover{background:var(--ink);color:#fff}
+.btn-gold{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:40;background:rgba(243,240,232,.96);backdrop-filter:blur(8px);border-bottom:1.5px solid var(--ink)}
+.nav-in{max-width:var(--max);margin:0 auto;padding:12px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand img{width:42px;height:42px}
+.brand b{display:block;font-weight:800;font-size:19px;letter-spacing:-.02em;line-height:1.05}
+.brand small{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--muted);margin-top:3px}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-links a.lk{font-family:var(--mono);font-size:13px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none}
+.nav-links a.lk:hover{text-decoration:underline;text-underline-offset:4px}
+.nav-phone{font-family:var(--mono);font-weight:600;font-size:15px}
+.nav-links .btn{padding:12px 18px;font-size:13px}
+
+/* hero, type first */
+.hero{padding:0 0 0}
+.ticket{display:grid;grid-template-columns:repeat(4,auto);justify-content:start;border-bottom:1px solid var(--rule)}
+.ticket span{font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;padding:14px 26px 14px 0;margin-right:26px;border-right:1px solid var(--rule);display:flex;align-items:center;gap:9px;white-space:nowrap}
+.ticket span:last-child{border-right:0}
+.dot{width:9px;height:9px;background:var(--gold);border-radius:50%;box-shadow:0 0 0 3px rgba(254,198,63,.25)}
+.hero-type{padding:clamp(40px,6vw,82px) 0 clamp(34px,4vw,52px)}
+.hero h1{font-size:clamp(46px,7.6vw,112px);max-width:13.5ch}
+.hero h1 .amp{color:var(--navy);font-weight:500}
+.hero-row{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-top:clamp(28px,3vw,40px);flex-wrap:wrap}
+.hero-sub{font-size:19px;max-width:40ch;color:var(--ink)}
+.hero-cta{display:flex;gap:10px;flex-wrap:wrap}
+.band{position:relative;height:clamp(280px,36vw,540px);overflow:hidden;background:var(--paper-2)}
+.band img{width:100%;height:100%;object-fit:cover;object-position:50% 78%}
+.caption{display:flex;justify-content:space-between;gap:20px;padding:12px 0 0;flex-wrap:wrap}
+.js .hero h1,.js .hero-row{opacity:0;transform:translateY(18px)}
+.js .band{opacity:0}
+.hero.in h1{opacity:1;transform:none;transition:opacity .8s ease,transform .9s cubic-bezier(.2,.7,.3,1)}
+.hero.in .hero-row{opacity:1;transform:none;transition:opacity .8s ease .15s,transform .9s cubic-bezier(.2,.7,.3,1) .15s}
+.hero.in .band{opacity:1;transition:opacity 1.1s ease .3s}
+
+/* quick facts, a spec sheet with leaders */
+.spec{padding:clamp(46px,5vw,70px) 0 clamp(20px,3vw,30px)}
+.spec-grid{display:grid;grid-template-columns:1fr 1fr;column-gap:clamp(40px,6vw,90px)}
+.row{display:flex;align-items:baseline;gap:12px;padding:15px 0;border-bottom:1px solid var(--rule)}
+.row .label{flex:none;color:var(--muted)}
+.row i{flex:1;border-bottom:1.5px dotted var(--rule);transform:translateY(-4px);min-width:20px}
+.row b{font-weight:600;font-size:16.5px;text-align:right}
+
+/* story, a file card beside the copy */
+.file{display:grid;grid-template-columns:270px 1fr;gap:clamp(36px,6vw,90px);align-items:start}
+.facts{border-top:6px solid var(--ink)}
+.facts div{padding:14px 0;border-bottom:1px solid var(--rule)}
+.facts .label{display:block;color:var(--muted);margin-bottom:3px;font-size:11.5px}
+.facts b{font-size:17px;font-weight:700;letter-spacing:-.01em}
+.story h2{margin:14px 0 22px;max-width:16ch}
+.story-cols{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.figure{margin-top:clamp(36px,4vw,54px)}
+.figure .ph{aspect-ratio:16/8;overflow:hidden;background:var(--paper-2)}
+.figure img{width:100%;height:100%;object-fit:cover;object-position:50% 46%}
+
+/* mission, one line set big */
+.mission{padding:clamp(60px,7vw,100px) 0;background:var(--white);border-top:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink)}
+.mission-grid{display:grid;grid-template-columns:200px 1fr;gap:clamp(30px,5vw,70px)}
+.mission h2{font-size:clamp(40px,6.4vw,92px);line-height:.98;max-width:15ch}
+.mark{background:linear-gradient(transparent 58%,var(--gold-soft) 58%,var(--gold-soft) 92%,transparent 92%);padding:0 .06em}
+.mission p{margin-top:26px;max-width:52ch}
+
+/* approach, heading holds while the steps pass */
+.approach-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,6vw,96px);align-items:start}
+.side{position:sticky;top:112px}
+.side h2{margin:14px 0 20px}
+.side p{max-width:38ch}
+.step{border-top:1.5px solid var(--ink);padding:26px 0 clamp(70px,8vw,120px)}
+.step:last-child{padding-bottom:20px}
+.step .label{display:flex;justify-content:space-between;margin-bottom:18px}
+.step h3{margin-bottom:14px;max-width:20ch}
+.step p{max-width:48ch}
+
+/* services, open grid split by thin lines */
+.svc-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:clamp(34px,4vw,54px);flex-wrap:wrap}
+.svc-head h2{margin-top:14px}
+.grid6{display:grid;grid-template-columns:repeat(3,1fr)}
+.cell{padding:clamp(26px,3vw,40px) clamp(22px,2.6vw,36px) clamp(30px,3.4vw,46px);border-left:1px solid var(--ink);border-top:1px solid var(--ink);min-height:250px;display:flex;flex-direction:column;transition:background .25s ease}
+.cell:nth-child(3n+1){border-left:0;padding-left:0}
+.cell:nth-child(-n+3){border-top:0}
+.cell:hover:not(.call){background:var(--white)}
+.cell:nth-child(3n+1):hover{background:transparent}
+.cell .label{color:var(--muted)}
+.cell h3{margin:44px 0 10px}
+.cell p{font-size:15.5px}
+.cell .n{display:inline-block;padding:2px 6px;margin-left:-6px;transition:background .25s ease}
+.cell:hover .n{background:var(--gold)}
+.cell.call{background:var(--navy);color:#fff;padding-left:clamp(22px,2.6vw,36px)}
+.cell.call .label{color:var(--gold)}
+.cell.call b{font-family:var(--mono);font-size:clamp(22px,2.3vw,30px);font-weight:600;margin-top:36px;letter-spacing:.01em}
+.cell.call p{color:rgba(255,255,255,.72);margin-top:8px}
+
+/* footer */
+.foot{background:var(--ink);color:#C8CEDA;padding:clamp(56px,6vw,84px) 0 0}
+.foot-top{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:34px}
+.foot .label{color:var(--gold);display:block;margin-bottom:12px;font-size:12px}
+.foot p{font-size:14.5px;color:#C8CEDA;line-height:1.75}
+.foot-brand img{width:58px;height:58px;margin-bottom:14px}
+.foot-word{font-weight:800;font-size:clamp(54px,11vw,170px);letter-spacing:-.05em;line-height:.8;color:#fff;margin-top:clamp(50px,6vw,80px);white-space:nowrap;overflow:hidden}
+.foot-word span{color:var(--gold)}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.14);margin-top:20px;padding:18px 0 24px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#8D96AA}
+
+.bar{display:none}
+
+.js .rv{opacity:0;transform:translateY(14px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1)}
+.js .rv.in{opacity:1;transform:none}
+
+@media (max-width:1060px){
+  .ticket{grid-template-columns:1fr 1fr}
+  .ticket span{border-right:0;margin-right:0}
+}
+@media (max-width:991px){
+  .spec-grid,.file,.approach-grid,.mission-grid,.foot-top{grid-template-columns:1fr}
+  .side{position:static}
+  .story-cols{grid-template-columns:1fr;gap:14px}
+  .grid6{grid-template-columns:1fr 1fr}
+  .cell,.cell:nth-child(3n+1){border-left:1px solid var(--ink);padding-left:clamp(22px,2.6vw,36px);border-top:1px solid var(--ink)}
+  .cell:nth-child(2n+1){border-left:0;padding-left:0}
+  .cell:nth-child(-n+3){border-top:1px solid var(--ink)}
+  .cell:nth-child(-n+2){border-top:0}
+  .cell.call{padding-left:clamp(22px,2.6vw,36px)}
+  .step{padding-bottom:50px}
+}
+@media (max-width:767px){
+  body{font-size:16px}
+  .wrap{padding:0 20px}
+  .nav-in{padding:10px 20px}
+  .nav-links a.lk,.nav-links .btn{display:none}
+  .brand img{width:36px;height:36px}
+  .brand b{font-size:17px}
+  .ticket{grid-template-columns:1fr}
+  .ticket span{padding:10px 0;border-bottom:1px solid var(--rule)}
+  .ticket span:last-child{border-bottom:0}
+  .hero-sub{font-size:17px}
+  .hero-cta{width:100%}
+  .hero-cta .btn{flex:1 1 100%}
+  .row{flex-wrap:wrap;gap:4px}
+  .row i{display:none}
+  .row b{text-align:left;width:100%}
+  .grid6{grid-template-columns:1fr}
+  .cell,.cell:nth-child(3n+1),.cell:nth-child(2n+1){border-left:0;padding-left:0;border-top:1px solid var(--ink);min-height:0}
+  .cell:first-child{border-top:0}
+  .cell:nth-child(-n+3){border-top:1px solid var(--ink)}
+  .cell:first-child{border-top:0}
+  .cell h3{margin-top:20px}
+  .cell.call{padding-left:22px;margin:0 -20px;padding-right:22px}
+  .foot-bottom{padding-bottom:84px}
+  .foot-word{font-size:12.5vw;white-space:normal;line-height:.9}
+  .bar{display:grid;grid-template-columns:1.5fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:60;border-top:1.5px solid var(--ink);transition:transform .4s cubic-bezier(.2,.7,.3,1)}
+  .js .bar.away{transform:translateY(105%)}
+  .bar a{font-family:var(--mono);font-weight:600;font-size:14px;letter-spacing:.06em;text-transform:uppercase;padding:18px 12px;text-align:center;text-decoration:none}
+  .bar .c{background:var(--gold);color:var(--ink)}
+  .bar .t{background:var(--ink);color:#fff}
+}
+@media (prefers-reduced-motion: reduce){
+  .js .rv,.js .hero h1,.js .hero-row,.js .band{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<div class="chrome">
+  <span><b>Design preview two, Dispatch.</b> A design comp, not a working page. The text is placeholder and nothing clicks.</span>
+  <a href="../">See all three</a>
+</div>
+
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="#top"><img src="../img/md-seal.webp" alt="MD Restoration Hawaii"><span><b>MD Restoration</b><small>HONOLULU, SINCE 2002</small></span></a>
+    <nav class="nav-links">
+      <a class="lk" href="#services">Services</a>
+      <a class="lk" href="#story">About</a>
+      <a class="lk">Careers</a>
+      <a class="nav-phone">808-528-3434</a>
+      <a class="btn btn-ink">Call Now</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="ticket">
+      <span><i class="dot"></i>Call 24 hours</span>
+      <span>Live operator, 365 days a year</span>
+      <span>Island-wide, Oahu</span>
+      <span>Most locations in 30 minutes</span>
+    </div>
+    <div class="hero-type">
+      <h1>Professional Water Damage Cleanup <span class="amp">&amp;</span> Restoration</h1>
+      <div class="hero-row">
+        <p class="hero-sub">Locally owned and trusted, accepted by all insurance providers. Available 24/7.</p>
+        <div class="hero-cta">
+          <a class="btn btn-ink">Call 808-528-3434</a>
+          <a class="btn btn-line">Text us</a>
+        </div>
+      </div>
+    </div>
+    <div class="band"><img src="../img/crew-framing.webp" alt="An MD Restoration crew framing a plywood wall under a blue sky"></div>
+    <div class="caption"><span class="label dim">Fig. 01 · An MD crew framing a wall</span><span class="label dim">Emergency water extraction · Fire · Mold · Asbestos</span></div>
+  </div>
+</section>
+
+<div class="spec">
+  <div class="wrap">
+    <div class="spec-grid">
+      <div>
+        <div class="row rv"><span class="label">Response</span><i></i><b>Most locations on Oahu within 30 minutes</b></div>
+        <div class="row rv"><span class="label">Call center</span><i></i><b>Live operator, 7 days a week</b></div>
+        <div class="row rv"><span class="label">Insurance</span><i></i><b>Accepted by all insurance providers</b></div>
+      </div>
+      <div>
+        <div class="row rv"><span class="label">Office</span><i></i><b>2343 N. King Street, Honolulu</b></div>
+        <div class="row rv"><span class="label">Hours</span><i></i><b><span class="nw">Mon-Fri 8:00am-4:00pm</span>, emergencies 24/7</b></div>
+        <div class="row rv"><span class="label">Licensed</span><i></i><b>IICRC Certified Firm, <span class="nw">#BC-30852</span></b></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="story">
+  <div class="wrap file">
+    <div class="facts rv">
+      <div><span class="label">Founded</span><b>2002, as MD Cleaners LLC</b></div>
+      <div><span class="label">Owners</span><b>The Harris family</b></div>
+      <div><span class="label">Team</span><b>Over 85 team members</b></div>
+      <div><span class="label">Fleet</span><b>60 company vehicles</b></div>
+      <div><span class="label">Based</span><b>2343 N. King Street</b></div>
+    </div>
+    <div class="story rv">
+      <span class="label dim">MD Restoration</span>
+      <h2>We're here to serve you!</h2>
+      <div class="story-cols">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+      </div>
+      <div class="figure">
+        <div class="ph"><img src="../img/family-fleet.webp" alt="Mark and Arlene Harris and their four kids in front of the MD Restoration fleet"></div>
+        <div class="caption"><span class="label dim">Fig. 02 · Mark and Arlene Harris with their four kids</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="mission">
+  <div class="wrap mission-grid">
+    <span class="label rv">Our mantra</span>
+    <div class="rv">
+      <h2>Treat every customer as if they were <span class="mark">family.</span></h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap approach-grid">
+    <div class="side">
+      <span class="label dim">How a job runs</span>
+      <h2>1 stop shop restoration experience</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+    <div class="steps">
+      <div class="step rv"><div class="label"><span>Step 01</span><span class="dim">The call</span></div><h3>Emergency Response 24/7</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p></div>
+      <div class="step rv"><div class="label"><span>Step 02</span><span class="dim">The claim</span></div><h3>Insurance Claim Estimating and Coordination</h3><p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p></div>
+      <div class="step rv"><div class="label"><span>Step 03</span><span class="dim">The rebuild</span></div><h3>Demolition and Reconstruction</h3><p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="services" style="padding-top:0">
+  <div class="wrap">
+    <div class="svc-head rv">
+      <div><span class="label dim">What we do</span><h2>Our Services</h2></div>
+      <p style="max-width:44ch">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+    </div>
+    <div class="grid6">
+      <div class="cell rv"><span class="label"><span class="n">01</span></span><h3>Emergency 24/7 Water Extraction</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div>
+      <div class="cell rv"><span class="label"><span class="n">02</span></span><h3>Fire Damage Restoration</h3><p>Sed do eiusmod tempor incididunt ut labore et dolore.</p></div>
+      <div class="cell rv"><span class="label"><span class="n">03</span></span><h3>Mold Remediation</h3><p>Ut enim ad minim veniam, quis nostrud exercitation.</p></div>
+      <div class="cell rv"><span class="label"><span class="n">04</span></span><h3>Asbestos Abatement</h3><p>Duis aute irure dolor in reprehenderit in voluptate.</p></div>
+      <div class="cell rv"><span class="label"><span class="n">05</span></span><h3>General Contractor</h3><p>Excepteur sint occaecat cupidatat non proident.</p></div>
+      <div class="cell call rv"><span class="label">24-hour Call Center</span><b>808-528-3434</b><p>Lorem ipsum dolor sit amet.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <img src="../img/md-seal.webp" alt="MD Restoration Hawaii">
+        <p>Locally owned and operated since 2002.</p>
+      </div>
+      <div>
+        <span class="label">Find us</span>
+        <p>MD Restoration<br>2343 N. King Street<br>Honolulu HI 96819</p>
+      </div>
+      <div>
+        <span class="label">Call us</span>
+        <p>(808) 528-3434<br>24-Hr Emergency Response<br>Office <span class="nw">Mon-Fri 8:00am-4:00pm</span></p>
+      </div>
+      <div>
+        <span class="label">Licensed</span>
+        <p>IICRC Certified Firm<br>EPA Lead-Safe Certified Firm<br>General Contractor #BC-30852</p>
+      </div>
+    </div>
+    <div class="foot-word">MD Restoration<span>.</span></div>
+    <div class="foot-bottom">
+      <span>© 2026 MD Restoration</span>
+      <span>MD Restoration Maui</span>
+    </div>
+  </div>
+</footer>
+
+<div class="bar away">
+  <a class="c">Call 808-528-3434</a>
+  <a class="t">Text us</a>
+</div>
+
+<script>
+(function(){
+  var bar = document.querySelector('.bar'), cta = document.querySelector('.hero-cta');
+  if(bar && cta && 'IntersectionObserver' in window){ new IntersectionObserver(function(en){ bar.classList.toggle('away', en[0].isIntersecting); }).observe(cta); } else if(bar){ bar.classList.remove('away'); }
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hero = document.querySelector('.hero');
+  if(hero){ if(reduce){ hero.classList.add('in'); } else { requestAnimationFrame(function(){ requestAnimationFrame(function(){ hero.classList.add('in'); }); }); } }
+  var items = document.querySelectorAll('.rv');
+  if(reduce || !('IntersectionObserver' in window)){
+    Array.prototype.forEach.call(items, function(el){ el.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      var sibs = Array.prototype.filter.call(e.target.parentElement.children, function(c){ return c.classList.contains('rv'); });
+      var i = sibs.indexOf(e.target);
+      e.target.style.transitionDelay = (i > 0 ? Math.min(i,7) * 70 : 0) + 'ms';
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    });
+  }, {rootMargin:'0px 0px -8% 0px', threshold:0.12});
+  Array.prototype.forEach.call(items, function(el){ io.observe(el); });
+})();
+</script>
+</body>
+</html>

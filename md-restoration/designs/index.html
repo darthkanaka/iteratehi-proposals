@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Three design directions | MD Restoration</title>
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Public+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#012C63; --navy-deep:#00183A; --gold:#FEC63F; --gold-ink:#6F5000;
+  --paper:#F5F3EE; --white:#fff; --ink:#0B1630; --muted:#55607A; --line:#E0DCD2;
+  --display:'Archivo',-apple-system,BlinkMacSystemFont,sans-serif;
+  --body:'Public Sans',-apple-system,BlinkMacSystemFont,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--paper);color:var(--ink);line-height:1.68;font-size:17px;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1060px;margin:0 auto;padding:0 26px}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.12;letter-spacing:-.02em}
+p{color:var(--muted)}
+
+.top{background:var(--navy-deep);color:#E6ECF5;padding:clamp(46px,6vw,74px) 0 clamp(46px,6vw,70px)}
+.top .eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:16px}
+.top h1{color:#fff;font-size:clamp(32px,4.6vw,50px);max-width:20ch}
+.top p{color:rgba(230,236,245,.8);font-size:18.5px;max-width:62ch;margin-top:20px}
+.top p+p{margin-top:14px}
+.top-logo{width:64px;height:64px;margin-bottom:24px}
+
+.note{background:#FFF4D6;border-bottom:1px solid #F0DFAE;padding:22px 0}
+.note-in{max-width:1060px;margin:0 auto;padding:0 26px;display:flex;gap:16px;align-items:flex-start}
+.note b{font-family:var(--display);font-size:18px;white-space:nowrap;color:var(--navy-deep)}
+.note p{font-size:16px;color:var(--ink)}
+
+.cards{padding-top:clamp(48px,6vw,76px);padding-bottom:clamp(20px,3vw,34px);display:grid;gap:clamp(34px,4vw,52px)}
+.dcard{background:var(--white);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 14px 40px rgba(0,24,58,.07)}
+.shot{display:block;position:relative;border-bottom:1px solid var(--line);background:var(--paper)}
+.shot img{width:100%;height:auto}
+.shot-veil{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 80%,rgba(255,255,255,.5));pointer-events:none}
+.dcard-body{padding:clamp(26px,3.2vw,40px)}
+.dnum{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:10px}
+.dcard h2{font-size:clamp(28px,3.2vw,38px);margin-bottom:6px;color:var(--navy-deep)}
+.dsub{font-size:16px;color:var(--gold-ink);font-weight:700;margin-bottom:18px}
+.dcard p+p{margin-top:14px}
+.spec{margin-top:24px;border-top:1px solid var(--line);padding-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:18px 30px}
+.spec h3{font-family:var(--body);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--navy);font-weight:700;margin-bottom:8px}
+.spec p{font-size:15.5px}
+.actions{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:15.5px;padding:14px 26px;border-radius:999px;text-decoration:none;transition:background-color .25s ease,color .25s ease,box-shadow .25s ease;border:1.5px solid transparent}
+.btn-gold{background:var(--gold);color:var(--navy-deep);box-shadow:0 6px 18px rgba(217,162,30,.22)}
+.btn-gold:hover{background:#FFD565}
+
+.close{padding:clamp(40px,5vw,64px) 0 clamp(56px,7vw,88px)}
+.close-box{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:clamp(28px,3.5vw,44px)}
+.close-box h2{font-size:clamp(24px,3vw,32px);margin-bottom:16px;color:var(--navy-deep)}
+.close-box p+p{margin-top:14px}
+.trynote{margin-top:24px;border-left:3px solid var(--gold);padding:3px 0 3px 16px;font-size:15.5px;color:var(--muted)}
+.trynote b{color:var(--navy);font-weight:700}
+.foot{background:var(--navy-deep);padding:26px 0;font-size:14.5px;color:#AEB9CC}
+.foot-in{max-width:1060px;margin:0 auto;padding:0 26px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+.js .rv{opacity:0;transform:translateY(20px);transition:opacity .8s cubic-bezier(.2,.7,.3,1),transform .8s cubic-bezier(.2,.7,.3,1)}
+.js .rv.in{opacity:1;transform:none}
+
+@media (max-width:767px){
+  body{font-size:16px}
+  .spec{grid-template-columns:1fr}
+  .note-in{flex-direction:column;gap:8px}
+  .note b{white-space:normal}
+  .actions .btn{width:100%}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important}
+  .js .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <img class="top-logo" src="img/md-seal.webp" alt="MD Restoration Hawaii">
+    <div class="eyebrow">Website redesign, design comps</div>
+    <h1>Three directions for the new homepage</h1>
+    <p>Mark, here are three directions for the top of a new MD Restoration homepage. Each one is built from your own seal, your own photos, and the headings already on your site, so you're reacting to a real design instead of a description.</p>
+    <p>These are starting points, not a pick one and we're done. Most people like the feel of one, a section from another, and the color from a third, and that's completely fine. Tell us what pulls you in and what doesn't, and we'll build from there.</p>
+  </div>
+</header>
+
+<div class="note">
+  <div class="note-in">
+    <b>Read this first</b>
+    <p>These are design comps, not a working website. Each one stops after the services section and jumps to the footer, because the point right now is the look and feel rather than the whole page. The paragraphs are placeholder Latin on purpose, since writing the real words is its own step. Nothing on these pages clicks, including the call and text buttons.</p>
+  </div>
+</div>
+
+<div class="wrap cards">
+
+  <article class="dcard rv">
+    <a class="shot" href="one/"><img src="thumbs/one.webp" alt="Direction one homepage preview"><span class="shot-veil"></span></a>
+    <div class="dcard-body">
+      <div class="dnum">Direction one</div>
+      <h2>Round the Clock</h2>
+      <div class="dsub">Built from your seal</div>
+      <p>This one is built out of your seal. The round badge on your vans and your shirts becomes the shape for the whole page, so the hero photo sits inside a big gold ring with RESTORATION and HAWAII running around it, marked off like a 24 hour clock. The buttons are round, the cards have soft corners, and each service sits in a rounded pill with a small photo of the work.</p>
+      <p>It's the friendliest of the three, and it puts your family right up front. For a company whose mantra is treating every customer as if they were family, that felt like the honest place to start. The navy and gold are the exact colors off your seal.</p>
+      <div class="spec">
+        <div>
+          <h3>Type and color</h3>
+          <p>A sturdy rounded font that matches the friendly lettering on your seal, with an easy to read font underneath. Deep navy and your seal's gold, with one full gold band for your mantra.</p>
+        </div>
+        <div>
+          <h3>The trade-off</h3>
+          <p>The seal shapes carry the whole personality, which makes this one feel like nobody but MD. That's a strength as long as the seal stays as it is. It's also the softest of the three, so it may feel more homey than some property managers and adjusters expect.</p>
+        </div>
+      </div>
+      <div class="trynote"><b>Worth trying.</b> Reload the page and watch the ring turn into place around the photo, then rest your cursor on the three job cards and the service pills.</div>
+      <div class="actions">
+        <a class="btn btn-gold" href="one/">Open direction one</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="dcard rv">
+    <a class="shot" href="two/"><img src="thumbs/two.webp" alt="Direction two homepage preview"><span class="shot-veil"></span></a>
+    <div class="dcard-body">
+      <div class="dnum">Direction two</div>
+      <h2>Dispatch</h2>
+      <div class="dsub">The disciplined one</div>
+      <p>This is the calm, organized one. Warm off white paper, one very big headline, and small typewriter style labels that read like a job ticket. The things people ask first, like how fast you get there, insurance, office hours and your license, sit in a clean spec sheet right under the photo instead of in boxes.</p>
+      <p>A crew photo runs the full width of the page under the headline, and the section on how a job runs keeps its heading still while the three steps scroll past it. It's the direction that looks most like a company with a system behind it, and that's what a property manager or an adjuster wants to see.</p>
+      <div class="spec">
+        <div>
+          <h3>Type and color</h3>
+          <p>One strong, plain font for everything, with a typewriter font for the small labels. Paper and navy ink, with gold used like a highlighter and nowhere else.</p>
+        </div>
+        <div>
+          <h3>The trade-off</h3>
+          <p>The restraint is the point, and it reads as very professional. It also leans on photos and words more than the other two, since there's no decoration to carry it. A fresh photo session of your crews would do the most for this one.</p>
+        </div>
+      </div>
+      <div class="trynote"><b>Worth trying.</b> Scroll slowly through the job steps and watch the heading stay put while the steps move past it, then rest your cursor on the services grid.</div>
+      <div class="actions">
+        <a class="btn btn-gold" href="two/">Open direction two</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="dcard rv">
+    <a class="shot" href="three/"><img src="thumbs/three.webp" alt="Direction three homepage preview"><span class="shot-veil"></span></a>
+    <div class="dcard-body">
+      <div class="dnum">Direction three</div>
+      <h2>Fleet</h2>
+      <div class="dsub">Bold and established</div>
+      <p>The boldest of the three. Your whole team and fleet photo runs edge to edge with the headline set right across it, and a gold stripe underneath carries your number the same way the stripe runs down the side of your vans. It shows how big and how local you are before anyone reads a word.</p>
+      <p>Your story sits in a white panel laid over a photo of a crew at work, with your founding year, your team and your fleet in big numbers. The services are one large numbered list instead of boxes or icons.</p>
+      <div class="spec">
+        <div>
+          <h3>Type and color</h3>
+          <p>A tall, heavy, all caps font in the spirit of the stripe lettering on your vans, with a plain font underneath. Navy, white and a cool gray, with the gold doing all the shouting.</p>
+        </div>
+        <div>
+          <h3>The trade-off</h3>
+          <p>It's the most confident of the three, and nobody else on Oahu can show a photo like that one. It also leans on that one photo more than anything else, and the copy we have is a small file from your current site, so a fresh full size team shot would make it even stronger.</p>
+        </div>
+      </div>
+      <div class="trynote"><b>Worth trying.</b> Reload it and watch the team photo settle while the gold stripe slides in, then move your cursor down the services list.</div>
+      <div class="actions">
+        <a class="btn btn-gold" href="three/">Open direction three</a>
+      </div>
+    </div>
+  </article>
+
+</div>
+
+<section class="close">
+  <div class="wrap">
+    <div class="close-box rv">
+      <h2>What's the same in all three</h2>
+      <p>Every direction opens the same way. Your headline, your number and a call button come first, and on a phone the call button stays on screen the whole way down the page. On your current site it disappears after the first screen. Each one then answers the first questions, like how fast you can get there and whether you take their insurance, before it moves through your story, your mantra, how a job runs and your services.</p>
+      <p>There's also a Text us button next to Call in all three. You mentioned wanting a text option for emergencies, so it's here to show where it would go. It's a placeholder until that line is set up.</p>
+      <p>The photos are the ones already on your site. A new photo session of your crews, your fleet and real jobs would change these pages a lot, in a good way, and the new photos would drop into whichever direction you like.</p>
+      <h2 style="margin-top:34px">What comes after this</h2>
+      <p>If one of these feels right, it becomes the look for the whole site. The rest of the homepage, your service pages, your testimonials and your careers page get designed from it, and the real words get written with you.</p>
+      <h2 style="margin-top:30px">The next step</h2>
+      <p>Look at all three on your phone as well as your computer, since that's how a lot of people will see them. Then let's set up a short call to talk through what you like and what you don't. Nothing here is locked.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="foot-in">
+    <span>MD Restoration</span>
+    <span>Prepared by Elevate Media HI</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var items = document.querySelectorAll('.rv');
+  if(reduce || !('IntersectionObserver' in window)){
+    Array.prototype.forEach.call(items, function(el){ el.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    });
+  }, {rootMargin:'0px 0px -6% 0px', threshold:0.08});
+  Array.prototype.forEach.call(items, function(el){ io.observe(el); });
+})();
+</script>
+</body>
+</html>

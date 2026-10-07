@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Direction Three, Fleet | MD Restoration Design Preview</title>
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#012C63; --navy-deep:#00183A; --navy-ink:#0A1730;
+  --gold:#FEC63F; --gold-deep:#D9A21E;
+  --white:#FFFFFF; --cool:#EDF0F4; --line:#D5DBE4; --muted:#56617A; --ink:#0B1630;
+  --display:'Big Shoulders Display',Impact,'Arial Narrow',sans-serif;
+  --body:'Public Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --max:1240px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--white);color:var(--ink);line-height:1.65;font-size:17px;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+a:not([href]){cursor:default}
+.nw{white-space:nowrap}
+
+.chrome{background:#000F26;color:#C3CCDB;font-size:12.5px;letter-spacing:.02em;padding:9px 20px;display:flex;gap:16px;align-items:center;justify-content:center;flex-wrap:wrap;text-align:center}
+.chrome b{color:var(--gold);font-weight:600}
+.chrome a{color:#C3CCDB;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+
+.wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+h1,h2,h3{font-family:var(--display);font-weight:800;text-transform:uppercase;line-height:.92;letter-spacing:.005em}
+h2{font-size:clamp(44px,5.6vw,80px)}
+h3{font-size:clamp(26px,2.4vw,32px);font-weight:800;line-height:1}
+p{color:var(--muted)}
+.kicker{font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--navy);margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.kicker::before{content:"";width:28px;height:4px;background:var(--gold)}
+section{padding:clamp(72px,8vw,120px) 0}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--body);font-weight:700;font-size:14.5px;letter-spacing:.1em;text-transform:uppercase;padding:16px 26px;border-radius:2px;border:2px solid transparent;text-decoration:none;white-space:nowrap;transition:background .2s ease,color .2s ease,border-color .2s ease}
+.btn-gold{background:var(--gold);color:var(--navy-deep)}
+.btn-gold:hover{background:#FFD565}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover{background:var(--navy-deep)}
+.btn-line{border-color:var(--navy);color:var(--navy)}
+.btn-line:hover{background:var(--navy);color:#fff}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:40;background:var(--navy-deep);color:#fff;border-bottom:1px solid rgba(255,255,255,.08)}
+.nav-in{max-width:var(--max);margin:0 auto;padding:12px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:13px;text-decoration:none}
+.brand img{width:48px;height:48px}
+.brand b{font-family:var(--display);font-weight:800;font-size:27px;letter-spacing:.02em;text-transform:uppercase;line-height:1}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-links a.lk{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;color:#D9E0EC}
+.nav-links a.lk:hover{color:var(--gold)}
+.nav-phone{font-family:var(--display);font-weight:800;font-size:24px;letter-spacing:.03em;color:var(--gold)}
+.nav-links .btn{padding:12px 20px;font-size:13px}
+.nav-m{display:none}
+
+/* hero, headline across the whole team */
+.hero{position:relative;height:clamp(600px,58vw,840px);overflow:hidden;background:var(--navy-deep)}
+.hero-photo{position:absolute;inset:0}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:54% 100%}
+.hero-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,24,58,.94) 0%,rgba(0,24,58,.82) 30%,rgba(0,24,58,.25) 52%,rgba(0,24,58,0) 62%),linear-gradient(0deg,rgba(0,24,58,.45) 0%,rgba(0,24,58,0) 22%)}
+.hero-copy{position:relative;z-index:2;max-width:var(--max);margin:0 auto;padding:clamp(40px,4.4vw,64px) 28px 0}
+.hero .kicker{color:var(--gold)}
+.hero h1{font-size:clamp(50px,6vw,90px);color:#fff;max-width:1010px}
+.hero-sub{font-size:19px;color:rgba(234,239,247,.86);margin-top:18px;max-width:62ch}
+.js .hero-photo img{transform:scale(1.07)}
+.js .hero-copy{opacity:0;transform:translateY(16px)}
+.hero.in .hero-photo img{transform:none;transition:transform 2.6s cubic-bezier(.16,.84,.3,1)}
+.hero.in .hero-copy{opacity:1;transform:none;transition:opacity .9s ease .2s,transform 1s cubic-bezier(.2,.7,.3,1) .2s}
+
+/* the van stripe */
+.stripe{position:relative;background:var(--gold);color:var(--navy-deep);overflow:hidden}
+.stripe::before,.stripe::after{content:"";position:absolute;left:0;right:0;height:3px;background:var(--navy)}
+.stripe::before{top:8px}
+.stripe::after{bottom:8px}
+.stripe-in{max-width:var(--max);margin:0 auto;padding:26px 28px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.livery{font-family:var(--display);font-weight:900;font-size:clamp(26px,2.7vw,38px);text-transform:uppercase;letter-spacing:.03em;line-height:1}
+.livery i{font-style:normal;color:var(--navy);opacity:.55;padding:0 .25em}
+.stripe-call{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.stripe-num{font-family:var(--display);font-weight:900;font-size:clamp(30px,3vw,42px);letter-spacing:.02em;line-height:1}
+.stripe-num small{display:block;font-family:var(--body);font-size:11.5px;font-weight:700;letter-spacing:.16em;margin-bottom:4px}
+.js .stripe-in{clip-path:inset(0 100% 0 0)}
+.hero.in + .stripe .stripe-in{clip-path:inset(0 0 0 0);transition:clip-path 1.2s cubic-bezier(.65,0,.25,1) .5s}
+
+/* quick facts, columns split by upright rules */
+.facts{display:grid;grid-template-columns:repeat(4,1fr);padding:clamp(40px,4vw,56px) 0}
+.fact{padding:6px clamp(18px,2.4vw,34px);border-left:1px solid var(--line)}
+.fact:first-child{border-left:0;padding-left:0}
+.fact b{display:block;font-family:var(--display);font-weight:900;font-size:clamp(44px,4.6vw,64px);line-height:.9;color:var(--navy);text-transform:uppercase}
+.fact > span{display:block;font-size:15px;color:var(--ink);margin-top:10px;line-height:1.45;max-width:24ch}
+
+/* story, a panel laid over the photo */
+.story{background:var(--cool)}
+.story-grid{display:grid;grid-template-columns:repeat(12,1fr);align-items:center}
+.story-photo{grid-column:6 / 13;grid-row:1;aspect-ratio:5/6;overflow:hidden;background:var(--line)}
+.story-photo img{width:100%;height:100%;object-fit:cover;object-position:40% 40%}
+.panel{grid-column:1 / 8;grid-row:1;position:relative;z-index:2;background:var(--white);padding:clamp(34px,4.4vw,62px);box-shadow:0 30px 60px rgba(0,24,58,.14);border-top:6px solid var(--gold)}
+.panel h2{margin-bottom:22px}
+.panel p+p{margin-top:14px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:34px;padding-top:26px;border-top:1px solid var(--line)}
+.stats b{display:block;font-family:var(--display);font-weight:900;font-size:clamp(40px,4vw,56px);line-height:.9;color:var(--navy)}
+.stats span{display:block;font-size:13.5px;color:var(--muted);margin-top:8px;line-height:1.4}
+
+/* mission, a poster */
+.mission{background:var(--navy-deep);color:#fff;padding:clamp(80px,9vw,140px) 0}
+.mission-grid{display:grid;grid-template-columns:1.65fr 1fr;gap:clamp(36px,5vw,80px);align-items:end}
+.mission .kicker{color:var(--gold)}
+.mission h2{font-size:clamp(52px,7.4vw,118px);font-weight:900;line-height:.88;color:#fff}
+.mission h2 em{font-style:normal;color:var(--gold)}
+.mission p{color:rgba(225,232,244,.74);margin-top:26px;max-width:48ch}
+.inset{border:1px solid rgba(255,255,255,.18);padding:10px;background:rgba(255,255,255,.03)}
+.inset .ph{aspect-ratio:4/3;overflow:hidden}
+.inset img{width:100%;height:100%;object-fit:cover;object-position:40% 50%}
+.inset span{display:block;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:#AEB9CC;padding:12px 4px 4px}
+
+/* approach, columns under a rule */
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(26px,3vw,44px);margin-top:clamp(40px,4vw,60px)}
+.col{border-top:2px solid var(--navy);padding-top:22px;position:relative}
+.col::before{content:"";position:absolute;left:0;top:-5px;width:64px;height:8px;background:var(--gold)}
+.col .num{font-family:var(--display);font-weight:900;font-size:76px;line-height:.85;color:var(--line);display:block;margin-bottom:16px}
+.col h3{margin-bottom:12px;color:var(--navy)}
+.col p{font-size:16px}
+.head-row{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
+.head-row p{max-width:44ch}
+
+/* services, a big numbered list */
+.svc{background:var(--cool)}
+.list{margin-top:clamp(36px,4vw,56px);border-top:2px solid var(--navy)}
+.item{display:grid;grid-template-columns:120px 1fr 340px;align-items:center;gap:24px;padding:24px 20px;border-bottom:1px solid var(--line);transition:background .3s ease,color .3s ease}
+.item .n{font-family:var(--display);font-weight:800;font-size:28px;color:var(--gold-deep);letter-spacing:.04em}
+.item h3{font-size:clamp(34px,4.4vw,62px);font-weight:900;color:var(--navy);transition:color .3s ease,transform .35s cubic-bezier(.2,.7,.3,1)}
+.item p{font-size:15.5px;transition:color .3s ease}
+.item:hover{background:var(--navy)}
+.item:hover h3{color:#fff;transform:translateX(10px)}
+.item:hover .n{color:var(--gold)}
+.item:hover p{color:rgba(225,232,244,.78)}
+
+/* footer */
+.foot{background:var(--navy-ink);color:#C3CCDB;padding:0}
+.foot-stripe{height:14px;background:var(--gold);border-bottom:3px solid var(--navy)}
+.foot-in{padding-top:clamp(56px,6vw,80px)}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:34px}
+.foot h4{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:12px}
+.foot p{font-size:14.5px;color:#C3CCDB;line-height:1.75}
+.foot-brand{display:flex;gap:16px;align-items:center}
+.foot-brand img{width:70px;height:70px}
+.foot-brand b{font-family:var(--display);font-weight:900;font-size:34px;text-transform:uppercase;color:#fff;line-height:.95}
+.foot-brand small{display:block;font-size:12.5px;color:#8E9AB2;margin-top:6px;font-family:var(--body);text-transform:none;font-weight:400;letter-spacing:0}
+.foot-bottom{margin-top:clamp(40px,4vw,56px);border-top:1px solid rgba(255,255,255,.12);padding:20px 0 26px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:13px;color:#8E9AB2}
+
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity .8s cubic-bezier(.2,.7,.3,1),transform .8s cubic-bezier(.2,.7,.3,1)}
+.js .rv.in{opacity:1;transform:none}
+
+@media (max-width:1060px){
+  .item{grid-template-columns:80px 1fr;}
+  .item p{grid-column:2}
+  .facts{grid-template-columns:1fr 1fr;row-gap:30px}
+  .fact:nth-child(3){border-left:0;padding-left:0}
+}
+@media (max-width:991px){
+  .story-photo{grid-column:1 / 13;aspect-ratio:4/3}
+  .panel{grid-column:1 / 13;grid-row:2;margin:-80px 18px 0}
+  .mission-grid,.cols,.foot-grid{grid-template-columns:1fr}
+  .foot-grid{gap:26px}
+}
+@media (max-width:767px){
+  body{font-size:16px}
+  .wrap{padding:0 20px}
+  .nav-in{padding:9px 16px;gap:10px}
+  .nav-links{display:none}
+  .nav-m{display:flex;gap:8px}
+  .nav-m .btn{padding:11px 14px;font-size:12.5px;letter-spacing:.08em}
+  .nav-m .btn-t{border-color:rgba(255,255,255,.35);color:#fff}
+  .brand img{width:38px;height:38px}
+  .brand b{font-size:21px}
+  .hero{height:auto;min-height:0}
+  .hero-photo{position:relative;height:auto}
+  .hero{display:flex;flex-direction:column}
+  .hero-copy{position:absolute;top:0;left:0;right:0;padding:28px 20px 0}
+  .hero-photo{position:relative;inset:auto;height:740px}
+  .hero-photo img{object-position:50% 100%}
+  .hero h1{font-size:44px}
+  .hero-sub{font-size:16.5px}
+  .hero-shade{background:linear-gradient(180deg,rgba(0,24,58,.96) 0%,rgba(0,24,58,.86) 38%,rgba(0,24,58,.2) 54%,rgba(0,24,58,0) 60%)}
+  .stripe-in{padding:24px 20px 26px;flex-direction:column;align-items:flex-start;gap:16px}
+  .stripe-call{width:100%}
+  .stripe-call .btn{flex:1}
+  .facts{grid-template-columns:1fr;row-gap:0}
+  .fact,.fact:first-child,.fact:nth-child(3){border-left:0;padding:18px 0;border-top:1px solid var(--line)}
+  .fact:first-child{border-top:0}
+  .panel{margin:-60px 12px 0;padding:28px 22px}
+  .stats{grid-template-columns:1fr 1fr 1fr;gap:12px}
+  .stats b{font-size:34px}
+  .item{grid-template-columns:1fr;gap:6px;padding:20px 4px}
+  .item p{grid-column:1}
+  .item .n{font-size:22px}
+  .foot-brand b{font-size:28px}
+}
+@media (prefers-reduced-motion: reduce){
+  .js .rv,.js .hero-copy,.js .hero-photo img{opacity:1;transform:none;transition:none}
+  .js .stripe-in{clip-path:none;transition:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<div class="chrome">
+  <span><b>Design preview three, Fleet.</b> A design comp, not a working page. The text is placeholder and nothing clicks.</span>
+  <a href="../">See all three</a>
+</div>
+
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="#top"><img src="../img/md-seal.webp" alt="MD Restoration Hawaii"><b>MD Restoration</b></a>
+    <nav class="nav-links">
+      <a class="lk" href="#services">Services</a>
+      <a class="lk" href="#story">About</a>
+      <a class="lk">Careers</a>
+      <a class="nav-phone">808-528-3434</a>
+      <a class="btn btn-gold">Call Now</a>
+    </nav>
+    <div class="nav-m">
+      <a class="btn btn-gold">Call</a>
+      <a class="btn btn-t">Text</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="top" style="padding:0">
+  <div class="hero-photo"><img src="../img/fleet-team.webp" alt="The whole MD Restoration team in uniform at the point of a V of company vans"></div>
+  <div class="hero-shade"></div>
+  <div class="hero-copy">
+    <div class="kicker">Emergency water extraction, call 24 hours</div>
+    <h1>Professional Water Damage Cleanup &amp; Restoration</h1>
+    <p class="hero-sub">Locally owned and trusted, accepted by all insurance providers. Available 24/7.</p>
+  </div>
+</section>
+<div class="stripe">
+  <div class="stripe-in">
+    <div class="livery">Water<i>•</i>Fire<i>•</i>Mold Restoration</div>
+    <div class="stripe-call">
+      <div class="stripe-num"><small>CALL 24 HOURS</small>808-528-3434</div>
+      <a class="btn btn-navy">Call Now</a>
+      <a class="btn btn-line">Text us</a>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="facts">
+    <div class="fact rv"><b>24/7</b><span>A live operator, 7 days a week, 365 days a year</span></div>
+    <div class="fact rv"><b>30 min</b><span>Most locations on Oahu within 30 minutes</span></div>
+    <div class="fact rv"><b>IICRC</b><span>Certified Firm and EPA Lead&#8209;Safe Certified Firm</span></div>
+    <div class="fact rv"><b>Licensed</b><span>General Contractor <span class="nw">#BC-30852</span> and asbestos contractor</span></div>
+  </div>
+</div>
+
+<section class="story" id="story">
+  <div class="wrap story-grid">
+    <div class="story-photo rv"><img src="../img/fire-crew.webp" alt="An MD Restoration technician in a white suit cleaning soot off a wall"></div>
+    <div class="panel rv">
+      <div class="kicker">MD Restoration</div>
+      <h2>We're here to serve you!</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+      <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+      <div class="stats">
+        <div><b>2002</b><span>Started as MD Cleaners LLC</span></div>
+        <div><b>85+</b><span>Team members</span></div>
+        <div><b>60</b><span>Company vehicles</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="mission">
+  <div class="wrap mission-grid">
+    <div class="rv">
+      <div class="kicker">Our mantra</div>
+      <h2>Treat every customer as if they were <em>family.</em></h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+    <figure class="inset rv">
+      <div class="ph"><img src="../img/family-fleet.webp" alt="Mark and Arlene Harris and their four kids in front of the MD Restoration fleet"></div>
+      <span>The Harris family</span>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="head-row rv">
+      <div><div class="kicker">How a job runs</div><h2>1 stop shop restoration experience</h2></div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+    </div>
+    <div class="cols">
+      <div class="col rv"><span class="num">01</span><h3>Emergency Response 24/7</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div>
+      <div class="col rv"><span class="num">02</span><h3>Insurance Claim Estimating and Coordination</h3><p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div>
+      <div class="col rv"><span class="num">03</span><h3>Demolition and Reconstruction</h3><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="svc" id="services">
+  <div class="wrap">
+    <div class="head-row rv">
+      <div><div class="kicker">What we do</div><h2>Our Services</h2></div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+    </div>
+    <div class="list">
+      <div class="item rv"><span class="n">01</span><h3>Emergency 24/7 Water Extraction</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div>
+      <div class="item rv"><span class="n">02</span><h3>Fire Damage Restoration</h3><p>Sed do eiusmod tempor incididunt ut labore et dolore.</p></div>
+      <div class="item rv"><span class="n">03</span><h3>Mold Remediation</h3><p>Ut enim ad minim veniam, quis nostrud exercitation.</p></div>
+      <div class="item rv"><span class="n">04</span><h3>Asbestos Abatement</h3><p>Duis aute irure dolor in reprehenderit in voluptate.</p></div>
+      <div class="item rv"><span class="n">05</span><h3>General Contractor</h3><p>Excepteur sint occaecat cupidatat non proident.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="foot-stripe"></div>
+  <div class="wrap foot-in">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="../img/md-seal.webp" alt="MD Restoration Hawaii">
+        <b>MD Restoration<small>Locally owned and operated since 2002.</small></b>
+      </div>
+      <div>
+        <h4>Find us</h4>
+        <p>2343 N. King Street<br>Honolulu HI 96819<br>Corner of N. King St and Owen St</p>
+      </div>
+      <div>
+        <h4>Call us</h4>
+        <p>(808) 528-3434<br>24-Hr Emergency Response<br>Office <span class="nw">Mon-Fri 8:00am-4:00pm</span></p>
+      </div>
+      <div>
+        <h4>Licensed</h4>
+        <p>IICRC Certified Firm<br>EPA Lead-Safe Certified Firm<br>General Contractor #BC-30852</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 MD Restoration</span>
+      <span>MD Restoration Maui</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hero = document.querySelector('.hero');
+  if(hero){ if(reduce){ hero.classList.add('in'); } else { requestAnimationFrame(function(){ requestAnimationFrame(function(){ hero.classList.add('in'); }); }); } }
+  var items = document.querySelectorAll('.rv');
+  if(reduce || !('IntersectionObserver' in window)){
+    Array.prototype.forEach.call(items, function(el){ el.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      var sibs = Array.prototype.filter.call(e.target.parentElement.children, function(c){ return c.classList.contains('rv'); });
+      var i = sibs.indexOf(e.target);
+      e.target.style.transitionDelay = (i > 0 ? Math.min(i,7) * 70 : 0) + 'ms';
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    });
+  }, {rootMargin:'0px 0px -8% 0px', threshold:0.12});
+  Array.prototype.forEach.call(items, function(el){ io.observe(el); });
+})();
+</script>
+</body>
+</html>
