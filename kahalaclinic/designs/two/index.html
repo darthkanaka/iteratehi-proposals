@@ -7,7 +7,7 @@
 <title>Direction Two, Daybreak | Kahala Clinic Design Preview</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&display=swap" rel="stylesheet">
 <style>
 :root{
   --paper:#FCFAF5; --paper-2:#F5F1E8; --white:#FFFFFF;
@@ -16,7 +16,7 @@
   --line:#E4DFD3; --line-strong:#CFC7B5;
   --display:'Archivo',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   --body:'Archivo',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  --serif:'Source Serif 4',Georgia,'Times New Roman',serif;
   --max:1200px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
@@ -35,7 +35,7 @@ h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.1;letter-spaci
 h2{font-size:clamp(30px,4.2vw,47px)}
 h3{font-size:19px;line-height:1.32;letter-spacing:-.015em}
 p{color:var(--muted)}
-.mono{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);font-weight:500}
+.eyebrow{font-family:var(--serif);font-style:italic;font-size:18px;line-height:1.3;color:var(--gold-deep);font-weight:400}
 section{padding:clamp(66px,7.5vw,108px) 0}
 section.tight{padding:clamp(52px,6vw,80px) 0}
 .rule{height:1px;background:var(--line);border:0}
@@ -51,9 +51,9 @@ section.tight{padding:clamp(52px,6vw,80px) 0}
 .nav-in{max-width:var(--max);margin:0 auto;padding:15px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px}
 .nav-logo img{height:42px;width:auto}
 .nav-links{display:flex;align-items:center;gap:30px}
-.nav-links a{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none}
+.nav-links a{font-family:var(--body);font-size:15px;font-weight:500;letter-spacing:-.005em;text-decoration:none}
 .nav-links a:not(.btn):hover{color:var(--gold-deep)}
-.nav-links a.btn{font-family:var(--display);font-size:14px;letter-spacing:-.01em;text-transform:none;padding:12px 24px}
+.nav-links a.btn{font-family:var(--display);font-size:14px;letter-spacing:-.01em;padding:12px 24px}
 .nav-phone{font-weight:500}
 .nav-call{display:none}
 
@@ -70,21 +70,22 @@ section.tight{padding:clamp(52px,6vw,80px) 0}
 .fact{padding:22px 28px 26px 28px;border-right:1px solid var(--line)}
 .fact:first-child{padding-left:0}
 .fact:last-child{border-right:0;padding-right:0}
-.fact-l{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+.fact-l{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--gold-deep);margin-bottom:5px}
 .fact p{color:var(--ink);font-size:14.5px;line-height:1.5}
 
 /* cinematic band */
-.band{position:relative;overflow:hidden;border-top:2px solid var(--gold);margin-top:clamp(40px,4.6vw,64px)}
-.band img{width:100%;aspect-ratio:21/8;object-fit:cover;object-position:center 44%;transform:scale(1.06);transition:transform 1.8s cubic-bezier(.2,.7,.3,1)}
+.band{position:relative;overflow:hidden;aspect-ratio:21/8;border-top:2px solid var(--gold);margin-top:clamp(40px,4.6vw,64px)}
+.band-media{position:absolute;left:0;right:0;top:-20%;bottom:-20%;will-change:transform}
+.band img{width:100%;height:100%;object-fit:cover;object-position:center 44%;transform:scale(1.06);transition:transform 1.8s cubic-bezier(.2,.7,.3,1)}
 .hero.in .band img{transform:none}
-.band-cap{position:absolute;right:22px;bottom:16px;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#fff;text-shadow:0 1px 10px rgba(0,0,0,.6)}
+.band-cap{position:absolute;right:24px;bottom:16px;font-family:var(--serif);font-style:italic;font-size:17px;color:#fff;text-shadow:0 1px 12px rgba(0,0,0,.6)}
 
 /* story */
 .story{display:grid;grid-template-columns:5fr 7fr;gap:clamp(28px,4.6vw,70px);align-items:center}
 .story p+p{margin-top:14px}
 .shot{position:relative}
 .shot img{width:100%;aspect-ratio:4/5;object-fit:cover;filter:grayscale(1) contrast(1.04)}
-.shot-cap{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:11px}
+.shot-cap{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--muted);margin-top:10px}
 
 /* mission, oversized statement */
 .mission{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -98,11 +99,12 @@ section.tight{padding:clamp(52px,6vw,80px) 0}
 .care-side{position:sticky;top:112px}
 .care-side p{margin-top:18px;font-size:16.5px;max-width:34ch}
 .care-bar{width:64px;height:3px;background:var(--gold);margin-top:28px}
-.care-item{padding-bottom:clamp(56px,8vw,120px)}
+.care-item{display:grid;grid-template-columns:clamp(44px,4.6vw,64px) 1fr;gap:clamp(14px,2vw,24px);align-items:start;padding-bottom:clamp(30px,3.6vw,46px)}
 .care-item:last-child{padding-bottom:0}
-.care-tag{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;color:var(--gold);margin-bottom:16px}
-.care-item h3{font-size:clamp(23px,2.5vw,31px);line-height:1.18;letter-spacing:-.025em;max-width:26ch}
-.care-item p{margin-top:14px;font-size:16.5px;max-width:46ch}
+.care-tag{font-family:var(--serif);font-size:clamp(40px,4.4vw,56px);line-height:.9;color:var(--gold);font-weight:400}
+.care-item h3{font-size:clamp(22px,2.3vw,28px);line-height:1.2;letter-spacing:-.025em;max-width:26ch}
+.care-item p{margin-top:10px;font-size:16.5px;max-width:46ch}
+section.care-sec{padding:clamp(56px,6vw,88px) 0}
 
 /* treatment, an open grid divided by one hairline cross */
 .offer{background:var(--paper-2);border-top:1px solid var(--line)}
@@ -112,18 +114,18 @@ section.tight{padding:clamp(52px,6vw,80px) 0}
 .cell{background:var(--paper-2);padding:clamp(28px,3.4vw,44px) clamp(24px,3.4vw,48px);min-height:clamp(180px,18vw,240px);display:flex;flex-direction:column;justify-content:space-between;gap:28px;transition:background-color .3s ease}
 .cell:nth-child(odd){padding-left:0}
 .cell:hover{background:var(--paper)}
-.cell-n{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;color:var(--gold)}
+.cell-n{font-family:var(--serif);font-size:34px;line-height:1;color:var(--gold);font-weight:400}
 .cell-t{font-family:var(--display);font-weight:600;font-size:clamp(22px,2.4vw,30px);line-height:1.15;letter-spacing:-.025em;color:var(--ink)}
 .cell-p{margin-top:10px;font-size:15px;max-width:34ch}
 
 /* footer */
 .foot{background:var(--ink);color:#E6E2D9;padding:clamp(54px,6vw,78px) 0 0}
 .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:34px}
-.foot h4{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-light);font-weight:500;margin-bottom:12px}
+.foot h4{font-family:var(--serif);font-style:italic;font-size:17px;color:var(--gold-light);font-weight:400;margin-bottom:10px}
 .foot p{font-size:14.5px;color:#E6E2D9;line-height:1.75}
 .foot-logo img{height:48px;width:auto;margin-bottom:14px}
 .foot-note{color:#A7A196;margin-top:9px;font-size:13.5px}
-.foot-bottom{margin-top:clamp(38px,4vw,54px);border-top:1px solid #2E3135;padding:20px 0 26px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#A7A196}
+.foot-bottom{margin-top:clamp(38px,4vw,54px);border-top:1px solid #2E3135;padding:20px 0 26px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:13.5px;color:#A7A196}
 
 .rv{opacity:0;transform:translateY(15px);transition:opacity .75s cubic-bezier(.2,.7,.3,1),transform .75s cubic-bezier(.2,.7,.3,1)}
 .rv.in{opacity:1;transform:none}
@@ -139,7 +141,7 @@ section.tight{padding:clamp(52px,6vw,80px) 0}
   .fact:nth-child(even){border-right:0;padding-right:0}
   .fact:nth-child(n+3){border-top:1px solid var(--line)}
   .story .shot{order:-1;max-width:420px}
-  .band img{aspect-ratio:16/9}
+  .band{aspect-ratio:16/9}
   .foot-grid{gap:26px}
 }
 @media (max-width:767px){
@@ -149,7 +151,7 @@ section.tight{padding:clamp(52px,6vw,80px) 0}
   .facts{grid-template-columns:1fr}
   .fact{border-right:0;padding-left:0;padding-right:0;border-top:1px solid var(--line)}
   .fact:first-child{border-top:0}
-  .band img{aspect-ratio:4/3}
+  .band{aspect-ratio:4/3}
   .matrix{grid-template-columns:1fr}
   .cell{min-height:0;padding-left:0;padding-right:0}
 }
@@ -183,7 +185,7 @@ section.tight{padding:clamp(52px,6vw,80px) 0}
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <div class="mono hero-mono">Child and family psychiatry, Honolulu</div>
+        <div class="eyebrow hero-mono">Child and family psychiatry, Honolulu</div>
         <h1>Changing minds,<span>changing lives</span></h1>
       </div>
       <div class="hero-side">
@@ -202,7 +204,7 @@ section.tight{padding:clamp(52px,6vw,80px) 0}
     </div>
   </div>
   <div class="band">
-    <img src="../img/hero-family-sunset.webp" alt="A family together at sunset on Oahu">
+    <div class="band-media"><img src="../img/hero-family-sunset.webp" alt="A family together at sunset on Oahu"></div>
     <div class="band-cap">Kahala, Honolulu</div>
   </div>
 </section>
@@ -214,7 +216,7 @@ section.tight{padding:clamp(52px,6vw,80px) 0}
       <div class="shot-cap">Placeholder caption. A real photo of the clinic and the team goes here.</div>
     </div>
     <div class="rv">
-      <div class="mono" style="margin-bottom:14px">Our Moolelo</div>
+      <div class="eyebrow" style="margin-bottom:14px">Our Moolelo</div>
       <h2>Rooted in Kahala since 2008</h2>
       <p style="margin-top:18px">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
       <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
@@ -225,24 +227,24 @@ section.tight{padding:clamp(52px,6vw,80px) 0}
 <section class="mission tight">
   <div class="mission-in rv">
     <div class="bar"></div>
-    <div class="mono" style="margin-bottom:16px">Our mission</div>
+    <div class="eyebrow" style="margin-bottom:16px">Our mission</div>
     <h2>Every journey is an opportunity for growth</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
   </div>
 </section>
 
-<section>
+<section class="care-sec">
   <div class="wrap care">
     <div class="care-side rv">
-      <div class="mono" style="margin-bottom:14px">Our approach</div>
+      <div class="eyebrow" style="margin-bottom:14px">Our approach</div>
       <h2>How we care for families</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
       <div class="care-bar"></div>
     </div>
     <div class="care-list">
-      <div class="care-item rv"><div class="care-tag">01 / 03</div><h3>One clinician, the whole team behind them</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div>
-      <div class="care-item rv"><div class="care-tag">02 / 03</div><h3>Personalized, data-driven care</h3><p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div>
-      <div class="care-item rv"><div class="care-tag">03 / 03</div><h3>Expertise in complex cases</h3><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+      <div class="care-item rv"><div class="care-tag">1</div><div><h3>One clinician, the whole team behind them</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div></div>
+      <div class="care-item rv"><div class="care-tag">2</div><div><h3>Personalized, data-driven care</h3><p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div></div>
+      <div class="care-item rv"><div class="care-tag">3</div><div><h3>Expertise in complex cases</h3><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div></div>
     </div>
   </div>
 </section>
@@ -251,16 +253,16 @@ section.tight{padding:clamp(52px,6vw,80px) 0}
   <div class="wrap">
     <div class="offer-head rv">
       <div>
-        <div class="mono" style="margin-bottom:14px">What we offer</div>
+        <div class="eyebrow" style="margin-bottom:14px">What we offer</div>
         <h2>Evidence-based treatment</h2>
       </div>
       <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
     </div>
     <div class="matrix">
-      <div class="cell rv"><div class="cell-n">01 / 04</div><div><div class="cell-t">Individual, couples, and family therapy</div><p class="cell-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div></div>
-      <div class="cell rv"><div class="cell-n">02 / 04</div><div><div class="cell-t">Medication management</div><p class="cell-p">Sed do eiusmod tempor incididunt ut labore et dolore.</p></div></div>
-      <div class="cell rv"><div class="cell-n">03 / 04</div><div><div class="cell-t">Sleep management</div><p class="cell-p">Ut enim ad minim veniam, quis nostrud exercitation.</p></div></div>
-      <div class="cell rv"><div class="cell-n">04 / 04</div><div><div class="cell-t">Osteopathic Manipulative Medicine</div><p class="cell-p">Duis aute irure dolor in reprehenderit in voluptate.</p></div></div>
+      <div class="cell rv"><div class="cell-n">1</div><div><div class="cell-t">Individual, couples, and family therapy</div><p class="cell-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div></div>
+      <div class="cell rv"><div class="cell-n">2</div><div><div class="cell-t">Medication management</div><p class="cell-p">Sed do eiusmod tempor incididunt ut labore et dolore.</p></div></div>
+      <div class="cell rv"><div class="cell-n">3</div><div><div class="cell-t">Sleep management</div><p class="cell-p">Ut enim ad minim veniam, quis nostrud exercitation.</p></div></div>
+      <div class="cell rv"><div class="cell-n">4</div><div><div class="cell-t">Osteopathic Manipulative Medicine</div><p class="cell-p">Duis aute irure dolor in reprehenderit in voluptate.</p></div></div>
     </div>
   </div>
 </section>
@@ -298,6 +300,20 @@ section.tight{padding:clamp(52px,6vw,80px) 0}
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var hero = document.querySelector('.hero');
   if(hero){ if(reduce){ hero.classList.add('in'); } else { requestAnimationFrame(function(){ hero.classList.add('in'); }); } }
+  var band = document.querySelector('.band'), media = document.querySelector('.band-media');
+  if(band && media && !reduce){
+    var ticking = false;
+    var move = function(){
+      ticking = false;
+      var r = band.getBoundingClientRect(), vh = window.innerHeight;
+      if(r.bottom < 0 || r.top > vh) return;
+      var off = (r.top + r.height / 2) - vh / 2;
+      media.style.transform = 'translate3d(0,' + (off * 0.1).toFixed(1) + 'px,0)';
+    };
+    window.addEventListener('scroll', function(){ if(!ticking){ ticking = true; requestAnimationFrame(move); } }, {passive:true});
+    window.addEventListener('resize', move, {passive:true});
+    move();
+  }
   var items = document.querySelectorAll('.rv');
   if(reduce || !('IntersectionObserver' in window)){
     Array.prototype.forEach.call(items, function(el){ el.classList.add('in'); });
