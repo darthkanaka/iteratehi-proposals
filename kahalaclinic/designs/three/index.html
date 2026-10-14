@@ -107,12 +107,17 @@ section{padding:clamp(64px,8.5vw,116px) 0}
 .col h3{margin-bottom:12px}
 .col p{font-size:15.5px}
 
-/* services, alternating editorial list */
+/* services, a serif list where the hovered row eases right and its name turns gold italic over a hairline that draws itself */
 .slist{border-top:1px solid var(--line)}
-.sitem{display:flex;align-items:baseline;gap:24px;padding:24px 0;border-bottom:1px solid var(--line);transition:padding-left .35s ease}
-.sitem:hover{padding-left:12px}
-.sitem .n{font-family:var(--body);font-size:12px;letter-spacing:.16em;color:var(--tan);font-weight:600;flex:none;width:34px}
-.sitem .t{font-family:var(--display);font-size:clamp(20px,2.4vw,27px)}
+.sitem{display:flex;align-items:baseline;gap:24px;padding:24px 0;border-bottom:1px solid var(--line)}
+.sitem .n{font-family:var(--display);font-size:clamp(20px,2.2vw,25px);font-variant-numeric:lining-nums;line-height:1;color:var(--tan);flex:none;width:34px;transition:color .4s ease,transform .7s cubic-bezier(.55,.1,.25,1)}
+.sitem .t{font-family:var(--display);font-size:clamp(20px,2.4vw,27px);transition:transform .7s cubic-bezier(.55,.1,.25,1)}
+.sitem .t span{padding-bottom:3px;background:linear-gradient(var(--gold),var(--gold)) no-repeat 0 100%/0 1px;transition:color .4s ease,background-size .7s cubic-bezier(.55,.1,.25,1)}
+@media (hover:hover){
+  .sitem:hover .n{color:var(--gold);transform:translateX(12px)}
+  .sitem:hover .t{transform:translateX(12px)}
+  .sitem:hover .t span{font-style:italic;color:var(--gold);background-size:100% 1px}
+}
 
 /* team, arch portraits */
 .team{display:grid;grid-template-columns:repeat(5,1fr);gap:34px 22px}
@@ -202,6 +207,7 @@ section{padding:clamp(64px,8.5vw,116px) 0}
 @media (prefers-reduced-motion:reduce){
   *{transition:none!important;animation:none!important}
   .rv,.hero-media{opacity:1;transform:none}
+  .sitem:hover .n,.sitem:hover .t{transform:none}
 }
 </style>
 </head>
@@ -291,10 +297,10 @@ section{padding:clamp(64px,8.5vw,116px) 0}
     <div class="label rv">What we offer</div>
     <h2 class="rv" style="margin-bottom:clamp(34px,4vw,52px)">Evidence-based treatment</h2>
     <div class="slist">
-      <div class="sitem rv"><span class="n">01</span><span class="t">Individual, couples, and family therapy</span></div>
-      <div class="sitem rv"><span class="n">02</span><span class="t">Medication management</span></div>
-      <div class="sitem rv"><span class="n">03</span><span class="t">Sleep management</span></div>
-      <div class="sitem rv"><span class="n">04</span><span class="t">Osteopathic Manipulative Medicine</span></div>
+      <div class="sitem rv"><span class="n">1</span><span class="t"><span>Individual, couples, and family therapy</span></span></div>
+      <div class="sitem rv"><span class="n">2</span><span class="t"><span>Medication management</span></span></div>
+      <div class="sitem rv"><span class="n">3</span><span class="t"><span>Sleep management</span></span></div>
+      <div class="sitem rv"><span class="n">4</span><span class="t"><span>Osteopathic Manipulative Medicine</span></span></div>
     </div>
   </div>
 </section>

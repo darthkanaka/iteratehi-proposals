@@ -68,15 +68,14 @@ section.tight{padding:clamp(52px,6vw,80px) 0}
 .hero-mono{margin-bottom:22px}
 .facts{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);margin-top:clamp(40px,4.6vw,64px)}
 .fact{padding:22px 28px 26px 28px;border-right:1px solid var(--line)}
-.fact:first-child{padding-left:0}
-.fact:last-child{border-right:0;padding-right:0}
+.fact:last-child{border-right:0}
 .fact-l{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--gold-deep);margin-bottom:5px}
 .fact p{color:var(--ink);font-size:14.5px;line-height:1.5}
 
 /* cinematic band */
 .band{position:relative;overflow:hidden;aspect-ratio:21/8;border-top:2px solid var(--gold);margin-top:clamp(40px,4.6vw,64px)}
-.band-media{position:absolute;left:0;right:0;top:-20%;bottom:-20%;will-change:transform}
-.band img{width:100%;height:100%;object-fit:cover;object-position:center 44%;transform:scale(1.06);transition:transform 1.8s cubic-bezier(.2,.7,.3,1)}
+.band-media{position:absolute;left:0;right:0;top:-40.2%;bottom:-24%;will-change:transform}
+.band img{width:100%;height:100%;object-fit:cover;object-position:center;transform:scale(1.06);transition:transform 1.8s cubic-bezier(.2,.7,.3,1)}
 .hero.in .band img{transform:none}
 .band-cap{position:absolute;right:24px;bottom:16px;font-family:var(--serif);font-style:italic;font-size:17px;color:#fff;text-shadow:0 1px 12px rgba(0,0,0,.6)}
 
@@ -87,9 +86,13 @@ section.tight{padding:clamp(52px,6vw,80px) 0}
 .shot img{width:100%;aspect-ratio:4/5;object-fit:cover;filter:grayscale(1) contrast(1.04)}
 .shot-cap{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--muted);margin-top:10px}
 
-/* mission, oversized statement */
-.mission{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.mission-in{max-width:960px;margin:0 auto;padding:0 28px}
+/* mission, oversized statement over a faint field of the logo's flower that warms up around the cursor */
+.mission{position:relative;overflow:hidden;background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.mission-pat,.mission-glow{position:absolute;inset:0;background:url('../img/kahala-flower-tile.svg') repeat;background-size:168px 168px;pointer-events:none}
+.mission-pat{opacity:.04}
+.mission-glow{opacity:0;transition:opacity .45s ease;-webkit-mask-image:radial-gradient(240px circle at var(--mx,50%) var(--my,50%),#000 0%,transparent 72%);mask-image:radial-gradient(240px circle at var(--mx,50%) var(--my,50%),#000 0%,transparent 72%)}
+.mission-glow.on{opacity:.16}
+.mission-in{position:relative;max-width:960px;margin:0 auto;padding:0 28px}
 .mission h2{font-size:clamp(32px,5.2vw,62px);letter-spacing:-.04em;line-height:1.06;max-width:17ch}
 .mission .bar{width:64px;height:3px;background:var(--gold);margin-bottom:26px}
 .mission p{margin-top:22px;font-size:17.5px;max-width:52ch}
@@ -112,7 +115,6 @@ section.care-sec{padding:clamp(56px,6vw,88px) 0}
 .offer-head p{font-size:16.5px;max-width:36ch}
 .matrix{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line-strong)}
 .cell{background:var(--paper-2);padding:clamp(28px,3.4vw,44px) clamp(24px,3.4vw,48px);min-height:clamp(180px,18vw,240px);display:flex;flex-direction:column;justify-content:space-between;gap:28px;transition:background-color .3s ease}
-.cell:nth-child(odd){padding-left:0}
 .cell:hover{background:var(--paper)}
 .cell-n{font-family:var(--serif);font-size:34px;line-height:1;color:var(--gold);font-weight:400}
 .cell-t{font-family:var(--display);font-weight:600;font-size:clamp(22px,2.4vw,30px);line-height:1.15;letter-spacing:-.025em;color:var(--ink)}
@@ -137,8 +139,7 @@ section.care-sec{padding:clamp(56px,6vw,88px) 0}
   .hero-side{padding-bottom:0}
   .facts{grid-template-columns:1fr 1fr}
   .fact{padding-left:26px;padding-right:26px}
-  .fact:nth-child(odd){padding-left:0}
-  .fact:nth-child(even){border-right:0;padding-right:0}
+  .fact:nth-child(even){border-right:0}
   .fact:nth-child(n+3){border-top:1px solid var(--line)}
   .story .shot{order:-1;max-width:420px}
   .band{aspect-ratio:16/9}
@@ -149,11 +150,12 @@ section.care-sec{padding:clamp(56px,6vw,88px) 0}
   .nav-call{display:inline-flex;border:1px solid var(--line-strong)}
   .nav-logo img{height:36px}
   .facts{grid-template-columns:1fr}
-  .fact{border-right:0;padding-left:0;padding-right:0;border-top:1px solid var(--line)}
+  .fact{border-right:0;padding-left:24px;padding-right:24px;border-top:1px solid var(--line)}
   .fact:first-child{border-top:0}
   .band{aspect-ratio:4/3}
+  .band-media{top:-35.3%;bottom:-14.7%}
   .matrix{grid-template-columns:1fr}
-  .cell{min-height:0;padding-left:0;padding-right:0}
+  .cell{min-height:0;padding:28px 24px}
 }
 @media (prefers-reduced-motion: reduce){
   .rv,.band img{transition:none}
@@ -225,6 +227,8 @@ section.care-sec{padding:clamp(56px,6vw,88px) 0}
 </section>
 
 <section class="mission tight">
+  <div class="mission-pat" aria-hidden="true"></div>
+  <div class="mission-glow" aria-hidden="true"></div>
   <div class="mission-in rv">
     <div class="bar"></div>
     <div class="eyebrow" style="margin-bottom:16px">Our mission</div>
@@ -307,12 +311,32 @@ section.care-sec{padding:clamp(56px,6vw,88px) 0}
       ticking = false;
       var r = band.getBoundingClientRect(), vh = window.innerHeight;
       if(r.bottom < 0 || r.top > vh) return;
-      var off = (r.top + r.height / 2) - vh / 2;
-      media.style.transform = 'translate3d(0,' + (off * 0.1).toFixed(1) + 'px,0)';
+      var off = ((r.top + r.height / 2) - vh / 2) * 0.195;
+      // never move the layer further than its overhang, so no edge can show on any screen
+      var up = media.offsetTop + media.offsetHeight - band.clientHeight - 1, down = -media.offsetTop - 1;
+      off = Math.max(-up, Math.min(down, off));
+      media.style.transform = 'translate3d(0,' + off.toFixed(1) + 'px,0)';
     };
     window.addEventListener('scroll', function(){ if(!ticking){ ticking = true; requestAnimationFrame(move); } }, {passive:true});
     window.addEventListener('resize', move, {passive:true});
     move();
+  }
+  var glow = document.querySelector('.mission-glow');
+  if(glow && !reduce && window.matchMedia('(hover: hover)').matches){
+    var sec = glow.parentElement, px = 0, py = 0, inside = false, pending = false;
+    var paint = function(){
+      pending = false;
+      if(!inside) return;
+      var r = sec.getBoundingClientRect();
+      glow.style.setProperty('--mx', (px - r.left) + 'px');
+      glow.style.setProperty('--my', (py - r.top) + 'px');
+      glow.classList.add('on');
+    };
+    sec.addEventListener('pointermove', function(e){
+      px = e.clientX; py = e.clientY; inside = true;
+      if(!pending){ pending = true; requestAnimationFrame(paint); }
+    }, {passive:true});
+    sec.addEventListener('pointerleave', function(){ inside = false; glow.classList.remove('on'); });
   }
   var items = document.querySelectorAll('.rv');
   if(reduce || !('IntersectionObserver' in window)){
